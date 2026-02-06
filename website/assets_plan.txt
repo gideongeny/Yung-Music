@@ -1,0 +1,6 @@
+# Website Assets Generation Plan
+- Hero Background: "Ultra-premium abstract music waves, deep navy and dark purple colors, golden line accents, cinematic lighting, 8k resolution, elegant and professional"
+- Phone Screen 1: Home (screenshot_1.jpg)
+- Phone Screen 2: Search (screenshot_2.jpg)
+- Phone Screen 3: Playing (screenshot_3.jpg)
+- Phone Screen 4: Lyrics (screenshot_4.jpg)
