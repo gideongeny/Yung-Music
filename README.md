@@ -126,12 +126,7 @@ If you'd like to support my work, you can buy me a coffee:
 </a>
 
 <div align="center">
-<h1>Join our community</h1>
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=1c1917)](https://github.com/gideongeny/Yung-Music)
-</div>
-
-<div align="center">
 <h1>Special thanks</h1>
 
 Credits:
