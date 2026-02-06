@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
@@ -77,13 +78,10 @@ fun AboutScreen(
         Spacer(Modifier.height(4.dp))
 
         Image(
-            painter = painterResource(R.drawable.small_icon),
+            painter = painterResource(R.drawable.about_logo),
             contentDescription = null,
-            colorFilter = ColorFilter.tint(
-                MaterialTheme.colorScheme.onBackground,
-                BlendMode.SrcIn
-            ),
             modifier = Modifier
+                .size(64.dp)
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surfaceContainer)
                 .clickable { },
