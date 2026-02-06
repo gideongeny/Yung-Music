@@ -18,3 +18,6 @@ gradle-9.2.1
 gradle-9.2.1-bin.zip
 build_log.txt
 build_log_2.txt
+node_modules/
+dist/
+.DS_Store
