@@ -171,6 +171,8 @@ import com.gideongeng.music.constants.SelectedThemeColorKey
 import com.gideongeng.music.ui.theme.DefaultThemeColor
 import com.gideongeng.music.ui.theme.MetrolistTheme
 import com.gideongeng.music.ui.menu.ListenTogetherDialog
+import com.gideongeng.music.ui.component.AdMobInterstitialManager
+import com.gideongeng.music.ui.component.AdMobBanner
 
 import com.gideongeng.music.ui.theme.extractThemeColor
 import com.gideongeng.music.ui.utils.appBarScrollBehavior
@@ -223,6 +225,7 @@ class MainActivity : ComponentActivity() {
     private var latestVersionName by mutableStateOf(BuildConfig.VERSION_NAME)
 
     private var playerConnection by mutableStateOf<PlayerConnection?>(null)
+    private lateinit var adMobInterstitialManager: AdMobInterstitialManager
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -298,6 +301,10 @@ class MainActivity : ComponentActivity() {
 
         // Initialize AdMob
         MobileAds.initialize(this) {}
+        adMobInterstitialManager = AdMobInterstitialManager(
+            this,
+            getString(R.string.ad_unit_id_interstitial)
+        )
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             val locale = dataStore[AppLanguageKey]
@@ -745,13 +752,19 @@ class MainActivity : ComponentActivity() {
                                             )
                                         },
                                         actions = {
-                                            IconButton(onClick = { navController.navigate("history") }) {
+                                            IconButton(onClick = { 
+                                                adMobInterstitialManager.showAdIfAvailable(this@MainActivity)
+                                                navController.navigate("history") 
+                                            }) {
                                                 Icon(
                                                     painter = painterResource(R.drawable.history),
                                                     contentDescription = stringResource(R.string.history)
                                                 )
                                             }
-                                            IconButton(onClick = { navController.navigate("stats") }) {
+                                            IconButton(onClick = { 
+                                                adMobInterstitialManager.showAdIfAvailable(this@MainActivity)
+                                                navController.navigate("stats") 
+                                            }) {
                                                 Icon(
                                                     painter = painterResource(R.drawable.stats),
                                                     contentDescription = stringResource(R.string.stats)

@@ -140,6 +140,7 @@ import com.gideongeng.music.ui.menu.YouTubePlaylistMenu
 import com.gideongeng.music.ui.menu.YouTubeSongMenu
 import com.gideongeng.music.ui.utils.SnapLayoutInfoProvider
 import com.gideongeng.music.utils.rememberPreference
+import com.gideongeng.music.ui.component.AdMobBanner
 import com.gideongeng.music.viewmodels.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -573,6 +574,15 @@ fun HomeScreen(
                             }
                         }
                     }
+                }
+                
+                item(key = "ad_banner_1") {
+                    AdMobBanner(
+                        adUnitId = stringResource(R.string.ad_unit_id_banner),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp)
+                    )
                 }
 
                 keepListening?.takeIf { it.isNotEmpty() }?.let { keepListening ->
