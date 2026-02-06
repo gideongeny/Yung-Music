@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -20,7 +21,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.gideongeny.music"
+        applicationId = "com.gideongeny.YungMusic"
         minSdk = 26
         targetSdk = 36
         versionCode = 139
@@ -114,7 +115,7 @@ android {
             )
         }
         debug {
-            applicationIdSuffix = ".debug"
+            // applicationIdSuffix = ".debug"
             isDebuggable = true
             signingConfig = if (System.getenv("GITHUB_EVENT_NAME") == "pull_request") {
                 signingConfigs.getByName("debug")
@@ -265,4 +266,11 @@ dependencies {
     coreLibraryDesugaring(libs.desugaring)
 
     implementation(libs.timber)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    // AdMob
+    implementation(libs.play.services.ads)
 }

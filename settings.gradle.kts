@@ -11,6 +11,14 @@ dependencyResolutionManagement {
     }
 }
 
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 // F-Droid doesn't support foojay-resolver plugin
 // plugins {
 //     id("org.gradle.toolchains.foojay-resolver-convention") version("1.0.0")

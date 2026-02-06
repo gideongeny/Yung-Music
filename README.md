@@ -134,12 +134,6 @@ If you'd like to support my work, you can buy me a coffee:
 <div align="center">
 <h1>Special thanks</h1>
 
-**InnerTune**
-[Zion Huang](https://github.com/z-huang) • [Malopieds](https://github.com/Malopieds)
-
-**OuterTune**
-[Davide Garberi](https://github.com/DD3Boh) • [Michael Zh](https://github.com/mikooomich)
-
 Credits:
 
 [**Kizzy**](https://github.com/dead8309/Kizzy) – for the Discord Rich Presence implementation and inspiration.

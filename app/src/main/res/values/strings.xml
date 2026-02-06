@@ -345,4 +345,8 @@
     <string name="new_version_available">New version available</string>
     <string name="translation_models">Translation Models</string>
     <string name="clear_translation_models">Clear translation models</string>
+    <string name="ad_unit_id_banner">ca-app-pub-1281448884303417/5498561928</string>
+    <string name="ad_unit_id_interstitial">ca-app-pub-1281448884303417/3383534478</string>
+    <string name="ad_unit_id_rewarded">ca-app-pub-1281448884303417/2070452808</string>
+    <string name="ad_unit_id_app_open">ca-app-pub-1281448884303417/8046404450</string>
 </resources>

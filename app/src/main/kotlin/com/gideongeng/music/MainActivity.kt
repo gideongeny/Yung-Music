@@ -119,6 +119,7 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
+import com.google.android.gms.ads.MobileAds
 import com.metrolist.innertube.YouTube
 import com.metrolist.innertube.models.SongItem
 import com.metrolist.innertube.models.WatchEndpoint
@@ -294,6 +295,9 @@ class MainActivity : ComponentActivity() {
         
         // Initialize Listen Together manager
         listenTogetherManager.initialize()
+
+        // Initialize AdMob
+        MobileAds.initialize(this) {}
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             val locale = dataStore[AppLanguageKey]

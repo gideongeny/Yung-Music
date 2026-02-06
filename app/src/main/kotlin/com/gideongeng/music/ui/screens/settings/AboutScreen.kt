@@ -203,57 +203,6 @@ fun AboutScreen(
             }
         }
 
-        Spacer(Modifier.height(16.dp))
-
-        Text(
-            text = "COLLABORATORS",
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.secondary,
-            modifier = Modifier
-                .border(
-                    width = 1.dp,
-                    color = MaterialTheme.colorScheme.secondary,
-                    shape = CircleShape,
-                )
-                .padding(
-                    horizontal = 6.dp,
-                    vertical = 2.dp,
-                ),
-        )
-
-        Spacer(Modifier.height(4.dp))
-
-        Text(
-            text = "Damian Sobczak",
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.secondary,
-            modifier = Modifier.clickable {
-                uriHandler.openUri("https://github.com/FullerBread2032")
-            }
-        )
-
-        Spacer(Modifier.height(8.dp))
-
-        Text(
-            text = "Adriel O'Connel",
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.secondary,
-            modifier = Modifier.clickable {
-                uriHandler.openUri("https://github.com/adrielGGmotion")
-            }
-        )
-
-        Spacer(Modifier.height(8.dp))
-
-        Text(
-            text = "Nyx",
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.secondary,
-            modifier = Modifier.clickable {
-                uriHandler.openUri("https://github.com/nyxiereal")
-            }
-        )
-
         Spacer(Modifier.height(32.dp))
     }
 
