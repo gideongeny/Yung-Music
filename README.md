@@ -10,13 +10,10 @@ If you're in a region where YouTube Music is not supported, you won't be able to
 
 <h1>Screenshots</h1>
 
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.png" width="30%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_2.png" width="30%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_3.png" width="30%" />
-
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_4.png" width="30%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_5.png" width="30%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_6.png" width="30%" />
+<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.jpg" width="22%" />
+<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_2.jpg" width="22%" />
+<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_3.jpg" width="22%" />
+<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_4.jpg" width="22%" />
 
 <div align="center">
 <h1>Release numbers</h1>
