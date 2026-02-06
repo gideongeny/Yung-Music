@@ -161,7 +161,7 @@ fun AboutScreen(
         Spacer(Modifier.height(8.dp))
 
         Text(
-            text = "GIDEON GENG",
+            text = "GIDEON NGENY",
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.secondary,
         )

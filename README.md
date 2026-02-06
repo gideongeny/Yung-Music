@@ -162,4 +162,4 @@ This project and its contents are not affiliated with, funded, authorized, endor
 
 Any trademark, service mark, trade name, or other intellectual property rights used in this project are owned by the respective owners.
 
-**Made with ❤️ by [Gideon Geng](https://github.com/gideongeny)**
+**Made with ❤️ by [Gideon Ngeny](https://github.com/gideongeny)**
