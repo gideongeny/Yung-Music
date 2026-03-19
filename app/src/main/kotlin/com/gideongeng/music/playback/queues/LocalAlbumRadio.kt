@@ -6,8 +6,8 @@
 package com.gideongeng.music.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.WatchEndpoint
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.WatchEndpoint
 import com.gideongeng.music.db.entities.AlbumWithSongs
 import com.gideongeng.music.extensions.toMediaItem
 import com.gideongeng.music.models.MediaMetadata

@@ -17,10 +17,10 @@ import androidx.room.Update
 import androidx.room.Upsert
 import androidx.room.RoomWarnings
 import androidx.sqlite.db.SupportSQLiteQuery
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.pages.AlbumPage
-import com.metrolist.innertube.pages.ArtistPage
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.pages.AlbumPage
+import com.gideongeng.music.innertube.pages.ArtistPage
 import com.gideongeng.music.constants.AlbumSortType
 import com.gideongeng.music.constants.ArtistSongSortType
 import com.gideongeng.music.constants.ArtistSortType

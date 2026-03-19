@@ -17,7 +17,7 @@ import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.constants.AudioQuality
 import com.gideongeng.music.constants.AudioQualityKey
 import com.gideongeng.music.db.MusicDatabase

@@ -9,9 +9,9 @@ import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.filterVideoSongs
-import com.metrolist.innertube.pages.BrowseResult
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.filterVideoSongs
+import com.gideongeng.music.innertube.pages.BrowseResult
 import com.gideongeng.music.constants.HideExplicitKey
 import com.gideongeng.music.constants.HideVideoSongsKey
 import com.gideongeng.music.utils.dataStore

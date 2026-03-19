@@ -120,9 +120,9 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
 import com.google.android.gms.ads.MobileAds
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.WatchEndpoint
 import com.gideongeng.music.constants.AppBarHeight
 import com.gideongeng.music.constants.AppLanguageKey
 import com.gideongeng.music.constants.CheckForUpdatesKey

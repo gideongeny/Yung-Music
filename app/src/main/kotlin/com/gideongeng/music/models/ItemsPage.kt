@@ -5,7 +5,7 @@
 
 package com.gideongeng.music.models
 
-import com.metrolist.innertube.models.YTItem
+import com.gideongeng.music.innertube.models.YTItem
 
 data class ItemsPage(
     val items: List<YTItem>,

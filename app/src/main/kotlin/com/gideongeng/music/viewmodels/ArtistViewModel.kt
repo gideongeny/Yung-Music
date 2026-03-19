@@ -11,10 +11,10 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.filterExplicit
-import com.metrolist.innertube.models.filterVideoSongs
-import com.metrolist.innertube.pages.ArtistPage
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.filterExplicit
+import com.gideongeng.music.innertube.models.filterVideoSongs
+import com.gideongeng.music.innertube.pages.ArtistPage
 import com.gideongeng.music.db.MusicDatabase
 import com.gideongeng.music.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel

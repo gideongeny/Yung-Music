@@ -43,9 +43,9 @@ package com.gideongeng.music.ui.screens
  import com.gideongeng.music.ui.menu.YouTubePlaylistMenu
  import com.gideongeng.music.ui.utils.backToMain
  import com.gideongeng.music.viewmodels.BrowseViewModel
- import com.metrolist.innertube.models.AlbumItem
- import com.metrolist.innertube.models.ArtistItem
- import com.metrolist.innertube.models.PlaylistItem
+ import com.gideongeng.music.innertube.models.AlbumItem
+ import com.gideongeng.music.innertube.models.ArtistItem
+ import com.gideongeng.music.innertube.models.PlaylistItem
  
  @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
  @Composable

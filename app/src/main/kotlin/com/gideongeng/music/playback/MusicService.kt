@@ -80,10 +80,10 @@ import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
-import com.metrolist.lastfm.LastFM
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.WatchEndpoint
+import com.gideongeng.music.lastfm.LastFM
 import com.gideongeng.music.MainActivity
 import com.gideongeng.music.R
 import com.gideongeng.music.constants.AudioNormalizationKey

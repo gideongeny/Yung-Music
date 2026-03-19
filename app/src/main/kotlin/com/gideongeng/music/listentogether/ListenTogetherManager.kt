@@ -8,8 +8,8 @@ package com.gideongeng.music.listentogether
 import android.util.Log
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.WatchEndpoint
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.WatchEndpoint
 import com.gideongeng.music.extensions.currentMetadata
 import com.gideongeng.music.models.MediaMetadata
 import com.gideongeng.music.models.toMediaMetadata
@@ -703,7 +703,7 @@ class ListenTogetherManager @Inject constructor(
                         Log.d(TAG, "Guest: QUEUE_ADD ${track.title}, insertNext=${action.insertNext == true}")
                         scope.launch(Dispatchers.IO) {
                             // Fetch MediaItem via YouTube metadata
-                            com.metrolist.innertube.YouTube.queue(listOf(track.id)).onSuccess { list ->
+                            com.gideongeng.music.innertube.YouTube.queue(listOf(track.id)).onSuccess { list ->
                                 val mediaItem = list.firstOrNull()?.toMediaMetadata()?.copy(
                                     suggestedBy = track.suggestedBy
                                 )?.toMediaItem()

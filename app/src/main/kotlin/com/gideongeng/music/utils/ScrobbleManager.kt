@@ -6,7 +6,7 @@
 package com.gideongeng.music.utils
 
 import com.gideongeng.music.models.MediaMetadata
-import com.metrolist.lastfm.LastFM
+import com.gideongeng.music.lastfm.LastFM
 import kotlinx.coroutines.*
 import timber.log.Timber
 import kotlin.math.min

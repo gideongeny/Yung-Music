@@ -57,7 +57,7 @@ import com.gideongeng.music.ui.utils.backToMain
 import com.gideongeng.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.metrolist.lastfm.LastFM
+import com.gideongeng.music.lastfm.LastFM
 import com.gideongeng.music.constants.EnableLastFMScrobblingKey
 import com.gideongeng.music.constants.LastFMSessionKey
 import com.gideongeng.music.constants.LastFMUseNowPlaying
@@ -225,7 +225,7 @@ fun LastFMSettings(
                                         coroutineScope.launch(Dispatchers.Main) {
                                             isLoggingIn = false
                                             loginError = when (exception) {
-                                                is com.metrolist.lastfm.LastFM.LastFmException -> {
+                                                is com.gideongeng.music.lastfm.LastFM.LastFmException -> {
                                                     when (exception.code) {
                                                         4 -> "Invalid username or password"
                                                         6 -> "Invalid parameters"

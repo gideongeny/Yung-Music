@@ -6,7 +6,7 @@
 package com.gideongeng.music.lyrics
 
 import android.content.Context
-import com.metrolist.simpmusic.SimpMusicLyrics
+import com.gideongeng.music.simpmusic.SimpMusicLyrics
 import com.gideongeng.music.constants.EnableSimpMusicKey
 import com.gideongeng.music.utils.dataStore
 import com.gideongeng.music.utils.get

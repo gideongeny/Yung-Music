@@ -8,8 +8,8 @@ package com.gideongeng.music.viewmodels
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
 import com.gideongeng.music.db.MusicDatabase
 import com.gideongeng.music.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel

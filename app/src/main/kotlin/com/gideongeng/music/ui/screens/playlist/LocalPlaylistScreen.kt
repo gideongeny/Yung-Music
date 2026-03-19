@@ -119,9 +119,9 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.utils.completed
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.utils.completed
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

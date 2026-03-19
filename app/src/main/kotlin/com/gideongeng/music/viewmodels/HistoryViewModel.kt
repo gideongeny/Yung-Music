@@ -9,8 +9,8 @@ import android.content.Context
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.pages.HistoryPage
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.pages.HistoryPage
 import com.gideongeng.music.constants.HistorySource
 import com.gideongeng.music.constants.HideVideoSongsKey
 import com.gideongeng.music.utils.reportException

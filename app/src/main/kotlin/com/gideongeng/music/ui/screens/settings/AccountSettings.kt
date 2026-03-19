@@ -54,8 +54,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.utils.parseCookieString
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.utils.parseCookieString
 import com.gideongeng.music.App.Companion.forgetAccount
 import com.gideongeng.music.BuildConfig
 import com.gideongeng.music.R

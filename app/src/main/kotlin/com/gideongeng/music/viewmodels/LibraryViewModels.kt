@@ -14,7 +14,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.exoplayer.offline.Download
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.constants.AlbumFilter
 import com.gideongeng.music.constants.AlbumFilterKey
 import com.gideongeng.music.constants.AlbumSortDescendingKey

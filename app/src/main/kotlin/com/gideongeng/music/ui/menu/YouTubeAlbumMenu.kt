@@ -58,8 +58,8 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.LocalDownloadUtil
 import com.gideongeng.music.LocalPlayerConnection

@@ -37,7 +37,7 @@ import com.gideongeng.music.ui.component.IconButton
 import com.gideongeng.music.ui.utils.backToMain
 import com.gideongeng.music.utils.rememberPreference
 import com.gideongeng.music.utils.reportException
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope

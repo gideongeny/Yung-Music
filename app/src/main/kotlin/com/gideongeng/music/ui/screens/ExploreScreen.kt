@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.metrolist.innertube.models.*
+import com.gideongeng.music.innertube.models.*
 import com.gideongeng.music.LocalPlayerAwareWindowInsets
 import com.gideongeng.music.LocalPlayerConnection
 import com.gideongeng.music.R

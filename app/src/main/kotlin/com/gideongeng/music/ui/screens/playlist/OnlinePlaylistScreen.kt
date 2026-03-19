@@ -52,8 +52,8 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.PlaylistItem
 import com.gideongeng.music.*
 import com.gideongeng.music.R
 import com.gideongeng.music.db.entities.Playlist

@@ -61,7 +61,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.navigation.NavController
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.LocalPlayerAwareWindowInsets
 import com.gideongeng.music.R
 import com.gideongeng.music.constants.*

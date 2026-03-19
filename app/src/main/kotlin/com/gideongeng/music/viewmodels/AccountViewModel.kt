@@ -7,11 +7,11 @@ package com.gideongeng.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.ArtistItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.utils.completed
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.models.ArtistItem
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.utils.completed
 import com.gideongeng.music.utils.reportException
 import com.gideongeng.music.ui.utils.resize
 import dagger.hilt.android.lifecycle.HiltViewModel

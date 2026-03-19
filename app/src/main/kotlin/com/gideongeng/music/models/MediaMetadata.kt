@@ -6,8 +6,8 @@
 package com.gideongeng.music.models
 
 import androidx.compose.runtime.Immutable
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 import com.gideongeng.music.db.entities.Song
 import com.gideongeng.music.db.entities.SongEntity
 import com.gideongeng.music.ui.utils.resize

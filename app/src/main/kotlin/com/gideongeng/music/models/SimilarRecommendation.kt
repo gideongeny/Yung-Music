@@ -5,7 +5,7 @@
 
 package com.gideongeng.music.models
 
-import com.metrolist.innertube.models.YTItem
+import com.gideongeng.music.innertube.models.YTItem
 import com.gideongeng.music.db.entities.LocalItem
 
 data class SimilarRecommendation(

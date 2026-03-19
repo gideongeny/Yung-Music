@@ -6,7 +6,7 @@
 package com.gideongeng.music.lyrics
 
 import android.content.Context
-import com.metrolist.kugou.KuGou
+import com.gideongeng.music.kugou.KuGou
 import com.gideongeng.music.constants.EnableKugouKey
 import com.gideongeng.music.utils.dataStore
 import com.gideongeng.music.utils.get

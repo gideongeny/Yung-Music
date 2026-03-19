@@ -28,11 +28,11 @@ import com.google.common.collect.ImmutableList
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.filterExplicit
-import com.metrolist.innertube.models.filterVideoSongs
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.filterExplicit
+import com.gideongeng.music.innertube.models.filterVideoSongs
 import com.gideongeng.music.R
 import com.gideongeng.music.constants.HideExplicitKey
 import com.gideongeng.music.constants.HideVideoSongsKey

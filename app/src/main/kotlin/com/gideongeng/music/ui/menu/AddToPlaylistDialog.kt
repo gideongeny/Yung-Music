@@ -30,7 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.metrolist.innertube.utils.parseCookieString
+import com.gideongeng.music.innertube.utils.parseCookieString
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.R
 import com.gideongeng.music.constants.InnerTubeCookieKey
@@ -42,7 +42,7 @@ import com.gideongeng.music.ui.component.ListDialog
 import com.gideongeng.music.ui.component.ListItem
 import com.gideongeng.music.ui.component.PlaylistListItem
 import com.gideongeng.music.utils.rememberPreference
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.constants.AddToPlaylistSortDescendingKey
 import com.gideongeng.music.constants.AddToPlaylistSortTypeKey
 import com.gideongeng.music.constants.PlaylistSortType

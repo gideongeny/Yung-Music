@@ -54,8 +54,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.media3.common.util.UnstableApi
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.MediaInfo
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.MediaInfo
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.LocalPlayerConnection
 import com.gideongeng.music.R

@@ -7,8 +7,8 @@ package com.gideongeng.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.pages.MoodAndGenres
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.pages.MoodAndGenres
 import com.gideongeng.music.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

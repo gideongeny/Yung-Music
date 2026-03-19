@@ -8,9 +8,9 @@ package com.gideongeng.music.viewmodels
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.filterExplicit
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.models.filterExplicit
 import com.gideongeng.music.constants.HideExplicitKey
 import com.gideongeng.music.db.MusicDatabase
 import com.gideongeng.music.utils.dataStore

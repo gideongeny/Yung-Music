@@ -9,8 +9,8 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AccountInfo
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AccountInfo
 import com.gideongeng.music.constants.ArtistSongSortType
 import com.gideongeng.music.db.DatabaseDao
 import com.gideongeng.music.db.entities.Artist

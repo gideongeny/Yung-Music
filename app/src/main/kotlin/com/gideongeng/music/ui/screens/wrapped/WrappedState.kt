@@ -5,7 +5,7 @@
 
 package com.gideongeng.music.ui.screens.wrapped
 
-import com.metrolist.innertube.models.AccountInfo
+import com.gideongeng.music.innertube.models.AccountInfo
 import com.gideongeng.music.db.entities.Album
 import com.gideongeng.music.db.entities.Artist
 import com.gideongeng.music.db.entities.SongWithStats

@@ -81,11 +81,11 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.util.Logger
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.ArtistItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.gideongeng.music.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.models.ArtistItem
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.models.WatchEndpoint
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.LocalPlayerAwareWindowInsets
 import com.gideongeng.music.LocalPlayerConnection

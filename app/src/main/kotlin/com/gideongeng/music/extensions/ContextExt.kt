@@ -12,7 +12,7 @@ import com.gideongeng.music.constants.InnerTubeCookieKey
 import com.gideongeng.music.constants.YtmSyncKey
 import com.gideongeng.music.utils.dataStore
 import com.gideongeng.music.utils.get
-import com.metrolist.innertube.utils.parseCookieString
+import com.gideongeng.music.innertube.utils.parseCookieString
 import kotlinx.coroutines.runBlocking
 
 fun Context.isSyncEnabled(): Boolean {

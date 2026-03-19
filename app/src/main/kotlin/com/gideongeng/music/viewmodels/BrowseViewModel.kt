@@ -10,11 +10,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gideongeng.music.db.MusicDatabase
 import com.gideongeng.music.utils.reportException
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.YTItem
-import com.metrolist.innertube.utils.completed
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.YTItem
+import com.gideongeng.music.innertube.utils.completed
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -29,7 +29,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.*
+import com.gideongeng.music.innertube.models.*
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.LocalPlayerConnection
 import com.gideongeng.music.R

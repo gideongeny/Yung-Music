@@ -8,14 +8,14 @@ package com.gideongeng.music.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.ArtistItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.utils.completed
-import com.metrolist.innertube.utils.parseCookieString
-import com.metrolist.lastfm.LastFM
+import com.gideongeng.music.innertube.YouTube
+import com.gideongeng.music.innertube.models.AlbumItem
+import com.gideongeng.music.innertube.models.ArtistItem
+import com.gideongeng.music.innertube.models.PlaylistItem
+import com.gideongeng.music.innertube.models.SongItem
+import com.gideongeng.music.innertube.utils.completed
+import com.gideongeng.music.innertube.utils.parseCookieString
+import com.gideongeng.music.lastfm.LastFM
 import com.gideongeng.music.constants.InnerTubeCookieKey
 import com.gideongeng.music.constants.LastFMUseSendLikes
 import com.gideongeng.music.constants.LastFullSyncKey

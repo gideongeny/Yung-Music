@@ -8,7 +8,7 @@ package com.gideongeng.music.viewmodels
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
+import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.constants.HideVideoSongsKey
 import com.gideongeng.music.constants.statToPeriod
 import com.gideongeng.music.db.MusicDatabase

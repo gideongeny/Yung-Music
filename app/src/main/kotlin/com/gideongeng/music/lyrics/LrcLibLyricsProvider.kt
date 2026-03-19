@@ -6,7 +6,7 @@
 package com.gideongeng.music.lyrics
 
 import android.content.Context
-import com.metrolist.lrclib.LrcLib
+import com.gideongeng.music.lrclib.LrcLib
 import com.gideongeng.music.constants.EnableLrcLibKey
 import com.gideongeng.music.utils.dataStore
 import com.gideongeng.music.utils.get

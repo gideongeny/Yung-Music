@@ -56,8 +56,8 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.WatchEndpoint
-import com.metrolist.innertube.utils.parseCookieString
+import com.gideongeng.music.innertube.models.WatchEndpoint
+import com.gideongeng.music.innertube.utils.parseCookieString
 import com.gideongeng.music.LocalDatabase
 import com.gideongeng.music.LocalPlayerAwareWindowInsets
 import com.gideongeng.music.LocalPlayerConnection
