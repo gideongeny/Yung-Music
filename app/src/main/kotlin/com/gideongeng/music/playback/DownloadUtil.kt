@@ -71,7 +71,13 @@ constructor(
                                 } ?: response.request
                             }
                             .build(),
-                    ),
+                    ).setUserAgent("com.google.ios.youtube/21.03.1 (iPhone16,2; U; CPU iOS 18_2 like Mac OS X;)")
+                     .setDefaultRequestProperties(
+                         mapOf(
+                             "Origin" to "https://www.youtube.com",
+                             "Referer" to "https://www.youtube.com/"
+                         )
+                     ),
                 ),
         ) { dataSpec ->
             val mediaId = dataSpec.key ?: error("No media id")

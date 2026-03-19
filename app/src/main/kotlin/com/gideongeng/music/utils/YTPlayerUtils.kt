@@ -34,20 +34,26 @@ object YTPlayerUtils {
         .proxy(YouTube.proxy)
         .build()
 
-    private val MAIN_CLIENT: YouTubeClient = WEB_REMIX
+    // ANDROID_VR_NO_AUTH returns direct pre-signed stream URLs.
+    // It does NOT need NewPipe signature timestamp deobfuscation which is
+    // currently blocked by YouTube's anti-bot enforcement.
+    private val MAIN_CLIENT: YouTubeClient = ANDROID_VR_NO_AUTH
 
+    // Fallback order: prefer clients that return direct URLs without cipher.
+    // WEB_REMIX kept at the end for metadata; it requires NewPipe which may
+    // be unavailable.
     private val STREAM_FALLBACK_CLIENTS: Array<YouTubeClient> = arrayOf(
-        TVHTML5,
-        ANDROID_VR_1_43_32,
-        ANDROID_VR_1_61_48,
-        ANDROID_CREATOR,
-        IPADOS,
-        ANDROID_VR_NO_AUTH,
-        MOBILE,
-        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
         IOS,
+        IPADOS,
+        ANDROID_VR_1_61_48,
+        ANDROID_VR_1_43_32,
+        MOBILE,
+        ANDROID_CREATOR,
+        TVHTML5,
+        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
         WEB,
-        WEB_CREATOR
+        WEB_CREATOR,
+        WEB_REMIX
     )
     data class PlaybackData(
         val audioConfig: PlayerResponse.PlayerConfig.AudioConfig?,
