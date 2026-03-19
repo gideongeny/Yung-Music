@@ -1,151 +1,113 @@
 <div align="center">
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/icon.png?raw=true" width="160" height="160" style="display: block; margin: 0 auto"/>
-<h1>YungMusic</h1>
-<p>YouTube Music client for Android</p>
+  <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/icon.png?raw=true" width="160" height="160" style="display: block; margin: 0 auto; filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.25));" />
+  
+  <h1 style="border-bottom: none; font-size: 3em; margin-bottom: 0;">YungMusic</h1>
+  <p style="font-size: 1.2em; color: #888;">The Ultimate Ad-Free YouTube Music Experience for Android</p>
 
-<div style="padding: 16px; margin: 16px 0; background-color: #FFFBE5; border-left: 6px solid #FFC107; border-radius: 4px;">
-<h2 style="margin: 0;"><strong>⚠Warning</strong></h2>
-If you're in a region where YouTube Music is not supported, you won't be able to use this app <strong>unless</strong> you have a proxy or VPN to connect to a YTM-supported region.
+  <p align="center">
+    <a href="https://github.com/gideongeny/Yung-Music/releases/latest">
+      <img alt="Latest Release" src="https://img.shields.io/github/v/release/gideongeny/Yung-Music?color=8A2BE2&label=Download%20Latest&style=for-the-badge&logo=android">
+    </a>
+    <a href="https://github.com/gideongeny/Yung-Music/releases">
+      <img alt="Downloads" src="https://img.shields.io/github/downloads/gideongeny/Yung-Music/total?color=4B0082&style=for-the-badge&logo=github">
+    </a>
+    <a href="https://github.com/gideongeny/Yung-Music/blob/main/LICENSE">
+       <img alt="License" src="https://img.shields.io/github/license/gideongeny/Yung-Music?color=black&style=for-the-badge">
+    </a>
+  </p>
+
+  <div style="padding: 16px; margin: 24px 0; background-color: #2a2a2a; border-left: 6px solid #8A2BE2; border-radius: 8px; text-align: left;">
+    <h3 style="margin: 0; color: #fff;">🌍 Regional Availability Notice</h3>
+    <p style="color: #ccc; margin-bottom: 0;">If you are in a region where YouTube Music is not officially supported, you will need a <strong>VPN or Proxy</strong> connected to a supported region to stream music.</p>
+  </div>
 </div>
 
-<h1>Screenshots</h1>
+<br/>
 
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.jpg?raw=true" width="22%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_2.jpg?raw=true" width="22%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_3.jpg?raw=true" width="22%" />
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_4.jpg?raw=true" width="22%" />
+## 📱 Beautiful. Fast. Yours.
+YungMusic is a beautifully crafted, privacy-respecting client for YouTube Music. Discover new artists, import your playlists, read synced lyrics, and enjoy high-quality audio streaming—all elegantly packaged in a stunning Material 3 interface.
 
 <div align="center">
-<h1>Release numbers</h1>
+  <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.jpg?raw=true" width="23%" style="border-radius: 12px; margin: 0 1%; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
+  <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_2.jpg?raw=true" width="23%" style="border-radius: 12px; margin: 0 1%; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
+  <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_3.jpg?raw=true" width="23%" style="border-radius: 12px; margin: 0 1%; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
+  <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_4.jpg?raw=true" width="23%" style="border-radius: 12px; margin: 0 1%; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
 </div>
 
-[![Latest release](https://img.shields.io/github/v/release/gideongeny/Yung-Music?style=for-the-badge)](https://github.com/gideongeny/Yung-Music/releases)
-[![GitHub license](https://img.shields.io/github/license/gideongeny/Yung-Music?style=for-the-badge)](https://github.com/gideongeny/Yung-Music/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/gideongeny/Yung-Music/total?style=for-the-badge)](https://github.com/gideongeny/Yung-Music/releases)
-</div>
+<br/>
 
 <div align="center">
-<h1>Table of Contents</h1>
+  <h2>📥 Download YungMusic</h2>
+  <p>Get the latest version directly from our secure releases page.</p>
+  
+  <a href="https://github.com/gideongeny/Yung-Music/releases/latest">
+    <img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="82" style="margin: 10px;">
+  </a>
+  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/gideongeny/Yung-Music/">
+    <img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="50" style="margin: 10px; transform: translateY(-16px);">
+  </a>
 </div>
 
-- [Features](#features)
-- [Download Now](#download-now)
-- [FAQ](#faq)
-- [Development Setup](#development-setup)
-- [Translations](#translations)
-- [Support Me](#support-me)
-- [Join our community](#join-our-community)
-- [Contributors](#thanks-to-all-contributors) 
+---
+
+## ✨ Core Features
+
+- **🎧 High Quality Playback** – Stream audio effortlessly in the background.
+- **🎵 Deep YT Music Integration** – Login to seamlessly sync your history, artists, albums, and playlists.
+- **💾 Offline Mode** – Download and uniquely cache your favorite tracks for offline listening.
+- **🎤 Synchronized Lyrics** – Sing along with precise, word-by-word synced live lyrics.
+- **🎨 Dynamic Material 3 Design** – Beautiful Light, Dark, AMOLED Black, and dynamic color themes.
+- **🎛️ Audio Wizardry** – Normalize audio volume, skip silence, and custom tempo/pitch adjustments.
+- **📂 Advanced Library Management** – Create local playlists, reorder queues, and import external lists.
+- **⏰ Sleep Timer** – Fall asleep to your favorite tunes.
+
+---
 
 <div align="center">
-<h1>Features</h1>
+  <h2>☕ Support The Developer</h2>
+  <p>YungMusic is an independent project made possible by endless hours of developing and designing. If this app brings music to your life, consider supporting my work!</p>
+  
+  <p style="font-size: 1.3em; font-weight: bold;">Hi, I'm Gideon Ngeno.</p>
+  
+  <a href="https://buymeacoffee.com/Gideongeny" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 181px !important;" >
+  </a>
 </div>
 
-- Play any song or video from YT Music
-- Background playback 
-- Personalized quick picks 
-- Library management 
-- Download and cache songs for offline playback
-- Search for songs, albums, artists, videos and playlists
-- Live lyrics 
-- YouTube Music account login support
-- Syncing of songs, artists, albums and playlists, from and to your account
-- Skip silence 
-- Import playlists 
-- Audio normalization 
-- Adjust tempo/pitch 
-- Local playlist management
-- Reorder songs in playlist or queue
-- Home screen widget with playback controls
-- Light - Dark - black - Dynamic theme
-- Sleep timer
-- Material 3 
-- etc.
+---
 
-<div align="center">
-<h1>Download Now</h1>
+## 🛠️ Development & Setup
 
-<table>
-<tr>
-<td align="center">
-<a href="https://github.com/gideongeny/Yung-Music/releases/latest/download/YungMusic.apk"><img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="82"></a><br/>
-</td>
-<td align="center">
-<a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/gideongeny/Yung-Music/"><img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="50"></a>
-</td>
-</tr>
-</table>
+This project uses modern Android architecture. 
 
-</div>
-
-<div align="center">
-<h1>Translations</h1>
-
-Thank you very much for helping to make YungMusic accessible to many people worldwide.
-</div>
-
-<div align="center">
-<h1>FAQ</h1>
-</div>
-
-### Q: Why YungMusic isn't showing in Android Auto?
-
-1. Go to Android Auto's settings and tap multiple times on the version in the bottom to enable
-   developer settings
-2. In the three dots menu at the top-right of the screen, click "Developer settings"
-3. Enable "Unknown sources"
-
-<div align="center">
-<h1>Development Setup</h1>
-</div>
-
-### GitHub Secrets Configuration
-
-This project uses GitHub Secrets to securely store API keys for building releases. To set up the secrets:
-
-1. Go to your GitHub repository settings
-2. Navigate to **Settings** → **Secrets and variables** → **Actions**
-3. Add the following repository secrets:
+### API Keys Storage
+The build workflow expects LastFM API keys to be securely stored via GitHub Secrets:
+1. Go to your repository settings -> **Secrets and variables** -> **Actions**
+2. Add the following secrets:
    - `LASTFM_API_KEY`: Your LastFM API key
    - `LASTFM_SECRET`: Your LastFM secret key
+*(Get credentials from: https://www.last.fm/api/account/create)*
 
-4. Get your LastFM API credentials from: https://www.last.fm/api/account/create
+---
 
-**Note:** These secrets are automatically injected into the build process via GitHub Actions and are not visible in the source code.
+## ❓ FAQ
+
+**Q: Why isn't YungMusic showing up in Android Auto?**
+1. Open Android Auto settings on your phone and tap the version number at the bottom multiple times to enable developer settings.
+2. Tap the three-dot menu at the top-right and select "Developer settings".
+3. Check the box to enable **"Unknown sources"**.
+
+---
+
+## 🤝 Special Thanks & Credits
+This project wouldn't be possible without the incredible open-source community:
+* [**Kizzy**](https://github.com/dead8309/Kizzy) – Discord Rich Presence inspiration.
+* [**Better Lyrics**](https://better-lyrics.boidu.dev) – Unmatched time-synced lyrics integration.
+* [**SimpMusic**](https://github.com/maxrave-dev/SimpMusic) – For the robust SimpMusic Lyrics API.
 
 <div align="center">
-<h1>Support Me</h1>
-
-If you'd like to support my work, you can buy me a coffee:
-
-<a href="https://www.buymeacoffee.com/Gideongeny">
-<img src="https://github.com/gideongeny/Yung-Music/blob/main/assets/buymeacoffee.png?raw=true" alt="Buy Me a Coffee" width="150" height="150" />
-</a>
-
-<div align="center">
-
-<h1>Special thanks</h1>
-
-Credits:
-
-[**Kizzy**](https://github.com/dead8309/Kizzy) – for the Discord Rich Presence implementation and inspiration.
-
-[**Better Lyrics**](https://better-lyrics.boidu.dev) – for beautiful time-synced lyrics with word-by-word highlighting, and seamless YouTube Music integration.
-
-[**SimpMusic Lyrics**](https://github.com/maxrave-dev/SimpMusic) – for providing lyrics data through the SimpMusic Lyrics API.
-
-The open-source community for tools, libraries, and APIs that make this project possible.
-
-<sub>Thank you to all the amazing developers who made this project possible!</sub>
-
+  <br/>
+  <i>Disclaimer: This project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated with YouTube, Google LLC, or any of its affiliates and subsidiaries. Any trademark, service mark, trade name, or other intellectual property rights used are owned by their respective owners.</i>
+  <br/><br/>
+  <b>Made with ❤️ by <a href="https://github.com/gideongeny">Gideon Ngeny</a></b>
 </div>
-
-<div align="center">
-<h1>Disclaimer</h1>
-</div>
-
-This project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated with YouTube, Google LLC, or any of its affiliates and subsidiaries.
-
-Any trademark, service mark, trade name, or other intellectual property rights used in this project are owned by the respective owners.
-
-**Made with ❤️ by [Gideon Ngeny](https://github.com/gideongeny)**
