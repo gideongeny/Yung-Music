@@ -305,12 +305,7 @@ class MainActivity : ComponentActivity() {
             this,
             getString(R.string.ad_unit_id_interstitial)
         ) {
-            // Show ad immediately when first loaded, but only on fresh start
-            if (savedInstanceState == null) {
-                runOnUiThread {
-                    adMobInterstitialManager.showAdIfAvailable(this@MainActivity, ignoreFrequency = true)
-                }
-            }
+            // First ad loaded. Deferring to natural app flow.
         }
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {

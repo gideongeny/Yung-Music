@@ -1,0 +1,128 @@
+> Task :lrclib:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :kizzy:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lastfm:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :innertube:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :simpmusic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kugou:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :betterlyrics:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preUniversalFossReleaseBuild UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseJniLibFolders
+> Task :lrclib:compileKotlin UP-TO-DATE
+> Task :lastfm:compileKotlin UP-TO-DATE
+> Task :kizzy:compileKotlin UP-TO-DATE
+> Task :kugou:compileKotlin UP-TO-DATE
+> Task :simpmusic:compileKotlin UP-TO-DATE
+> Task :betterlyrics:compileKotlin UP-TO-DATE
+> Task :kugou:compileJava NO-SOURCE
+> Task :simpmusic:compileJava NO-SOURCE
+> Task :lrclib:compileJava NO-SOURCE
+> Task :lastfm:compileJava NO-SOURCE
+> Task :betterlyrics:compileJava NO-SOURCE
+> Task :kizzy:compileJava NO-SOURCE
+> Task :betterlyrics:processResources NO-SOURCE
+> Task :lrclib:processResources NO-SOURCE
+> Task :simpmusic:processResources NO-SOURCE
+> Task :lastfm:processResources NO-SOURCE
+> Task :kizzy:processResources NO-SOURCE
+> Task :kugou:processResources NO-SOURCE
+> Task :betterlyrics:classes UP-TO-DATE
+> Task :lastfm:classes UP-TO-DATE
+> Task :lrclib:classes UP-TO-DATE
+> Task :simpmusic:classes UP-TO-DATE
+> Task :kizzy:classes UP-TO-DATE
+> Task :kugou:classes UP-TO-DATE
+> Task :lastfm:jar UP-TO-DATE
+> Task :kugou:jar UP-TO-DATE
+> Task :simpmusic:jar UP-TO-DATE
+> Task :betterlyrics:jar UP-TO-DATE
+> Task :kizzy:jar UP-TO-DATE
+> Task :lrclib:jar UP-TO-DATE
+> Task :innertube:compileKotlin UP-TO-DATE
+> Task :innertube:compileJava NO-SOURCE
+> Task :innertube:processResources NO-SOURCE
+> Task :innertube:classes UP-TO-DATE
+> Task :innertube:jar UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseArtProfile
+> Task :app:mergeUniversalFossReleaseNativeLibs
+> Task :app:expandUniversalFossReleaseL8ArtProfileWildcards
+> Task :app:stripUniversalFossReleaseDebugSymbols
+> Task :app:extractUniversalFossReleaseNativeSymbolTables
+> Task :app:buildKotlinToolingMetadata
+> Task :app:mergeUniversalFossReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateUniversalFossReleaseBuildConfig
+> Task :app:checkUniversalFossReleaseDuplicateClasses
+> Task :app:checkUniversalFossReleaseAarMetadata
+> Task :app:processUniversalFossReleaseNavigationResources
+> Task :app:generateUniversalFossReleaseResValues
+> Task :app:compileUniversalFossReleaseNavigationResources
+> Task :app:processUniversalFossReleaseGoogleServices
+> Task :app:mapUniversalFossReleaseSourceSetPaths
+> Task :app:extractUniversalFossReleaseSupportedLocales
+> Task :app:generateUniversalFossReleaseLocaleConfig
+> Task :app:generateUniversalFossReleaseResources
+> Task :app:createUniversalFossReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksUniversalFossRelease
+> Task :app:processUniversalFossReleaseMainManifest
+> Task :app:processUniversalFossReleaseManifest
+> Task :app:extractProguardFiles
+> Task :app:mergeUniversalFossReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseShaders
+> Task :app:compileUniversalFossReleaseShaders NO-SOURCE
+> Task :app:generateUniversalFossReleaseAssets UP-TO-DATE
+> Task :app:javaPreCompileUniversalFossRelease
+> Task :app:mergeUniversalFossReleaseResources
+> Task :app:mergeUniversalFossReleaseAssets
+> Task :app:compressUniversalFossReleaseAssets
+> Task :app:extractUniversalFossReleaseVersionControlInfo
+> Task :app:validateSigningUniversalFossRelease
+> Task :app:writeUniversalFossReleaseAppMetadata
+> Task :app:writeUniversalFossReleaseSigningConfigVersions
+> Task :app:parseUniversalFossReleaseIntegrityConfig UP-TO-DATE
+> Task :app:processUniversalFossReleaseManifestForPackage
+> Task :app:processUniversalFossReleaseResources
+> Task :app:kspUniversalFossReleaseKotlin
+> Task :app:compileUniversalFossReleaseKotlin
+w: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/app/src/main/kotlin/com/gideongeng/music/ui/screens/search/SearchScreen.kt:78:26 'val LocalLifecycleOwner: ProvidableCompositionLocal<LifecycleOwner>' is deprecated. Moved to lifecycle-runtime-compose library in androidx.lifecycle.compose package.
+
+> Task :app:compileUniversalFossReleaseJavaWithJavac
+> Task :app:hiltAggregateDepsUniversalFossRelease
+> Task :app:hiltJavaCompileUniversalFossRelease
+> Task :app:processUniversalFossReleaseJavaRes
+> Task :app:generateUniversalFossReleaseLintVitalReportModel
+> Task :app:mergeUniversalFossReleaseJavaResource
+> Task :app:transformUniversalFossReleaseClassesWithAsm
+> Task :app:mergeUniversalFossReleaseGeneratedProguardFiles
+> Task :app:expandUniversalFossReleaseArtProfileWildcards
+> Task :app:produceUniversalFossReleaseComposeMapping
+> Task :app:reportUniversalFossReleaseComposeMappingErrors
+> Task :app:lintVitalAnalyzeUniversalFossRelease
+> Task :app:minifyUniversalFossReleaseWithR8
+> Task :app:lintVitalReportUniversalFossRelease
+> Task :app:lintVitalUniversalFossRelease
+> Task :app:mergeUniversalFossReleaseComposeMapping
+> Task :app:convertShrunkResourcesToBinaryUniversalFossRelease
+> Task :app:optimizeUniversalFossReleaseResources
+> Task :app:l8DexDesugarLibUniversalFossRelease
+> Task :app:buildUniversalFossReleasePreBundle
+> Task :app:compileUniversalFossReleaseArtProfile
+> Task :app:packageUniversalFossRelease
+> Task :app:createUniversalFossReleaseApkListingFileRedirect
+> Task :app:assembleUniversalFossRelease
+> Task :app:packageUniversalFossReleaseBundle
+> Task :app:signUniversalFossReleaseBundle
+> Task :app:produceUniversalFossReleaseBundleIdeListingFile
+> Task :app:createUniversalFossReleaseBundleListingFileRedirect
+> Task :app:bundleUniversalFossRelease
+
+[Incubating] Problems report is available at: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 9m 22s
+79 actionable tasks: 63 executed, 16 up-to-date

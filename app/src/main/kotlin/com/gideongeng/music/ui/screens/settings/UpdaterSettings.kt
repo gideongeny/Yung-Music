@@ -43,6 +43,14 @@ import com.gideongeng.music.utils.rememberPreference
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.foundation.layout.size
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.rememberCoroutineScope
+import com.gideongeng.music.BuildConfig
+import com.gideongeng.music.utils.Updater
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,6 +60,8 @@ fun UpdaterScreen(
 ) {
     val (checkForUpdates, onCheckForUpdatesChange) = rememberPreference(CheckForUpdatesKey, true)
     val (updateNotifications, onUpdateNotificationsChange) = rememberPreference(UpdateNotificationsEnabledKey, true)
+    val context = LocalContext.current
+    val coroutineScope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier
@@ -77,6 +87,30 @@ fun UpdaterScreen(
 
         Material3SettingsGroup(
             items = buildList {
+                add(
+                    Material3SettingsItem(
+                        title = { Text("Check for update now") },
+                        icon = painterResource(R.drawable.update),
+                        onClick = {
+                            coroutineScope.launch(Dispatchers.IO) {
+                                Updater.getLatestVersionName().onSuccess { latest ->
+                                    withContext(Dispatchers.Main) {
+                                        if (Updater.isUpdateAvailable(BuildConfig.VERSION_NAME, latest)) {
+                                            Toast.makeText(context, "Update available: $latest", Toast.LENGTH_LONG).show()
+                                        } else {
+                                            Toast.makeText(context, "You are on the latest version", Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
+                                }.onFailure {
+                                    withContext(Dispatchers.Main) {
+                                        Toast.makeText(context, "Failed to check for updates", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
+                        }
+                    )
+                )
+
                 add(
                     Material3SettingsItem(
                         title = { Text(stringResource(R.string.check_for_updates)) },
