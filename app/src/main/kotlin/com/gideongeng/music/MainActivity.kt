@@ -636,6 +636,16 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
+                DisposableEffect(navController) {
+                    val listener = androidx.navigation.NavController.OnDestinationChangedListener { _, _, _ ->
+                        adMobInterstitialManager.showAdIfAvailable(this@MainActivity)
+                    }
+                    navController.addOnDestinationChangedListener(listener)
+                    onDispose {
+                        navController.removeOnDestinationChangedListener(listener)
+                    }
+                }
+
                 LaunchedEffect(playerConnection) {
                     val player = playerConnection?.player ?: return@LaunchedEffect
                     if (player.currentMediaItem == null) {

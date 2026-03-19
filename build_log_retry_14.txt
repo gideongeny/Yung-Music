@@ -1,0 +1,53 @@
+> Task :clean
+> Task :betterlyrics:clean
+> Task :betterlyrics:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lastfm:clean
+> Task :simpmusic:clean
+> Task :lastfm:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :simpmusic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lrclib:clean
+> Task :lrclib:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kugou:clean
+> Task :kugou:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kizzy:clean
+> Task :kizzy:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lastfm:processResources NO-SOURCE
+> Task :kugou:processResources NO-SOURCE
+> Task :simpmusic:processResources NO-SOURCE
+> Task :kizzy:processResources NO-SOURCE
+> Task :betterlyrics:processResources NO-SOURCE
+> Task :lrclib:processResources NO-SOURCE
+> Task :innertube:clean FAILED
+> Task :lrclib:compileKotlin
+> Task :simpmusic:compileKotlin
+> Task :kugou:compileKotlin
+> Task :betterlyrics:compileKotlin
+> Task :lastfm:compileKotlin
+> Task :kizzy:compileKotlin
+> Task :app:clean
+
+[Incubating] Problems report is available at: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':innertube:clean'.
+> java.io.IOException: Unable to delete directory 'C:\Users\mukht\Desktop\Android\Yung-Music-main\innertube\build'
+    Failed to delete some children. This might happen because a process has files open or has its working directory set in the target directory.
+    - C:\Users\mukht\Desktop\Android\Yung-Music-main\innertube\build\libs\innertube.jar
+    - C:\Users\mukht\Desktop\Android\Yung-Music-main\innertube\build\libs
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 1s
+15 actionable tasks: 15 executed

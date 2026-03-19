@@ -25,8 +25,19 @@ import com.materialkolor.PaletteStyle
 import com.materialkolor.dynamiccolor.ColorSpec
 import com.materialkolor.rememberDynamicColorScheme
 import com.materialkolor.score.Score
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Shapes
+import androidx.compose.ui.unit.dp
 
-val DefaultThemeColor = Color(0xFFED5564)
+val DefaultThemeColor = Color(0xFF6200EA) // Yung Music Deep Purple
+
+val YungMusicShapes = Shapes(
+    extraSmall = RoundedCornerShape(12.dp),
+    small = RoundedCornerShape(16.dp),
+    medium = RoundedCornerShape(24.dp),
+    large = RoundedCornerShape(32.dp),
+    extraLarge = RoundedCornerShape(40.dp)
+)
 
 @Composable
 fun MetrolistTheme(
@@ -66,6 +77,7 @@ fun MetrolistTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = AppTypography, // Use the defined AppTypography
+        shapes = YungMusicShapes,
         content = content
     )
 }
