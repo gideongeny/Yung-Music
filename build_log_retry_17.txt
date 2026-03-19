@@ -1,0 +1,133 @@
+Starting a Gradle Daemon, 1 stopped Daemon could not be reused, use --status for details
+> Task :kugou:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lrclib:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :simpmusic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :kizzy:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lastfm:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :innertube:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :betterlyrics:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preUniversalFossReleaseBuild UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseArtProfile UP-TO-DATE
+> Task :app:expandUniversalFossReleaseL8ArtProfileWildcards UP-TO-DATE
+> Task :kugou:processResources NO-SOURCE
+> Task :innertube:processResources NO-SOURCE
+> Task :lrclib:processResources NO-SOURCE
+> Task :lastfm:processResources NO-SOURCE
+> Task :betterlyrics:processResources NO-SOURCE
+> Task :kizzy:processResources NO-SOURCE
+> Task :simpmusic:processResources NO-SOURCE
+> Task :app:checkUniversalFossReleaseDuplicateClasses UP-TO-DATE
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateUniversalFossReleaseBuildConfig
+> Task :app:checkUniversalFossReleaseAarMetadata
+> Task :app:processUniversalFossReleaseNavigationResources
+> Task :app:compileUniversalFossReleaseNavigationResources UP-TO-DATE
+> Task :app:generateUniversalFossReleaseResValues
+> Task :app:processUniversalFossReleaseGoogleServices
+> Task :app:mapUniversalFossReleaseSourceSetPaths
+> Task :app:extractUniversalFossReleaseSupportedLocales
+> Task :app:generateUniversalFossReleaseLocaleConfig
+> Task :app:generateUniversalFossReleaseResources
+> Task :betterlyrics:compileKotlin
+> Task :innertube:compileKotlin
+> Task :kizzy:compileKotlin
+> Task :lastfm:compileKotlin
+> Task :kugou:compileKotlin
+> Task :simpmusic:compileKotlin
+> Task :lrclib:compileKotlin
+> Task :app:mergeUniversalFossReleaseResources
+> Task :app:createUniversalFossReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksUniversalFossRelease UP-TO-DATE
+> Task :app:processUniversalFossReleaseMainManifest UP-TO-DATE
+> Task :app:processUniversalFossReleaseManifest UP-TO-DATE
+> Task :app:processUniversalFossReleaseManifestForPackage UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseShaders UP-TO-DATE
+> Task :app:compileUniversalFossReleaseShaders NO-SOURCE
+> Task :app:generateUniversalFossReleaseAssets UP-TO-DATE
+> Task :app:javaPreCompileUniversalFossRelease
+> Task :app:mergeUniversalFossReleaseAssets
+> Task :app:compressUniversalFossReleaseAssets UP-TO-DATE
+> Task :app:extractUniversalFossReleaseVersionControlInfo
+> Task :app:validateSigningUniversalFossRelease UP-TO-DATE
+> Task :app:writeUniversalFossReleaseAppMetadata
+> Task :app:writeUniversalFossReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:parseUniversalFossReleaseIntegrityConfig UP-TO-DATE
+> Task :simpmusic:compileJava NO-SOURCE
+> Task :simpmusic:classes UP-TO-DATE
+> Task :lrclib:compileJava NO-SOURCE
+> Task :lrclib:classes UP-TO-DATE
+> Task :simpmusic:jar
+> Task :lrclib:jar
+> Task :lastfm:compileJava NO-SOURCE
+> Task :lastfm:classes UP-TO-DATE
+> Task :kugou:compileJava NO-SOURCE
+> Task :kugou:classes UP-TO-DATE
+> Task :betterlyrics:compileJava NO-SOURCE
+> Task :betterlyrics:classes UP-TO-DATE
+> Task :lastfm:jar
+> Task :betterlyrics:jar
+> Task :kugou:jar
+> Task :kizzy:compileJava NO-SOURCE
+> Task :kizzy:classes UP-TO-DATE
+> Task :kizzy:jar
+> Task :app:processUniversalFossReleaseResources
+
+> Task :innertube:compileKotlin
+w: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/innertube/src/main/kotlin/com/gideongeng/music/innertube/YouTube.kt:1231:38 Unnecessary safe call on a non-null receiver of type 'PlayerResponse.PlayabilityStatus'.
+w: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/innertube/src/main/kotlin/com/gideongeng/music/innertube/pages/NewPipe.kt:69:49 Unnecessary safe call on a non-null receiver of type 'ResponseBody'.
+w: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/innertube/src/main/kotlin/com/gideongeng/music/innertube/pages/PageHelper.kt:93:64 Elvis operator (?:) always returns the left operand of non-nullable type 'String'.
+
+> Task :innertube:compileJava NO-SOURCE
+> Task :innertube:classes UP-TO-DATE
+> Task :innertube:jar
+> Task :app:mergeUniversalFossReleaseNativeLibs UP-TO-DATE
+> Task :app:stripUniversalFossReleaseDebugSymbols UP-TO-DATE
+> Task :app:extractUniversalFossReleaseNativeSymbolTables UP-TO-DATE
+> Task :app:mergeUniversalFossReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:kspUniversalFossReleaseKotlin
+> Task :app:compileUniversalFossReleaseKotlin
+> Task :app:compileUniversalFossReleaseJavaWithJavac
+> Task :app:hiltAggregateDepsUniversalFossRelease
+> Task :app:hiltJavaCompileUniversalFossRelease
+> Task :app:processUniversalFossReleaseJavaRes UP-TO-DATE
+> Task :app:generateUniversalFossReleaseLintVitalReportModel
+> Task :app:mergeUniversalFossReleaseJavaResource
+> Task :app:transformUniversalFossReleaseClassesWithAsm
+> Task :app:mergeUniversalFossReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :app:lintVitalAnalyzeUniversalFossRelease
+> Task :app:produceUniversalFossReleaseComposeMapping
+> Task :app:reportUniversalFossReleaseComposeMappingErrors
+> Task :app:expandUniversalFossReleaseArtProfileWildcards
+> Task :app:minifyUniversalFossReleaseWithR8
+> Task :app:lintVitalReportUniversalFossRelease UP-TO-DATE
+> Task :app:lintVitalUniversalFossRelease
+> Task :app:mergeUniversalFossReleaseComposeMapping
+> Task :app:convertShrunkResourcesToBinaryUniversalFossRelease
+> Task :app:optimizeUniversalFossReleaseResources
+> Task :app:l8DexDesugarLibUniversalFossRelease
+> Task :app:buildUniversalFossReleasePreBundle
+> Task :app:compileUniversalFossReleaseArtProfile
+> Task :app:packageUniversalFossRelease
+> Task :app:createUniversalFossReleaseApkListingFileRedirect
+> Task :app:assembleUniversalFossRelease
+> Task :app:packageUniversalFossReleaseBundle
+> Task :app:signUniversalFossReleaseBundle
+> Task :app:produceUniversalFossReleaseBundleIdeListingFile
+> Task :app:createUniversalFossReleaseBundleListingFileRedirect
+> Task :app:bundleUniversalFossRelease
+
+[Incubating] Problems report is available at: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 11m 51s
+79 actionable tasks: 55 executed, 24 up-to-date

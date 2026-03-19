@@ -1,0 +1,22 @@
+> Task :clean
+> Task :simpmusic:clean
+> Task :simpmusic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :betterlyrics:clean
+> Task :betterlyrics:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lrclib:clean
+> Task :lrclib:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lastfm:clean
+> Task :lastfm:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kugou:clean
+> Task :kugou:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kizzy:clean
+> Task :kizzy:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :simpmusic:processResources NO-SOURCE
+> Task :lastfm:processResources NO-SOURCE
+> Task :kugou:processResources NO-SOURCE
+> Task :lrclib:processResources NO-SOURCE
+> Task :betterlyrics:processResources NO-SOURCE
+> Task :kizzy:processResources NO-SOURCE
+> Task :innertube:clean FAILED
+Terminate batch job (Y/N)? 
+^C
