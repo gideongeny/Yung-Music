@@ -10,7 +10,7 @@ import android.content.res.Configuration
 import java.util.Locale
 
 fun reportException(throwable: Throwable) {
-    throwable.printStackTrace()
+    ErrorHandler.report(throwable)
 }
 
 @Suppress("DEPRECATION")

@@ -684,6 +684,12 @@ class MainActivity : ComponentActivity() {
                 val snackbarHostState = remember { SnackbarHostState() }
 
                 LaunchedEffect(Unit) {
+                    com.gideongeng.music.utils.ErrorHandler.errorEvents.collectLatest { msg ->
+                        snackbarHostState.showSnackbar(message = msg)
+                    }
+                }
+
+                LaunchedEffect(Unit) {
                     if (pendingIntent != null) {
                         handleDeepLinkIntent(pendingIntent!!, navController)
                         pendingIntent = null
