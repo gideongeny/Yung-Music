@@ -100,24 +100,32 @@ android {
             keyPassword = "android"
         }
         create("release") {
-            val keystorePropertiesFile = rootProject.file("keystore.properties")
-            if (keystorePropertiesFile.exists()) {
-                val keystoreProperties = Properties()
-                keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-                storeFile = file(keystoreProperties["storeFile"] as String)
-                storePassword = keystoreProperties["storePassword"] as String
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
-            } else if (System.getenv("STORE_PASSWORD") != null) {
-                storeFile = file("keystore/release.keystore")
-                storePassword = System.getenv("STORE_PASSWORD")
-                keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
+            val localKeystore = file("keystore/release.keystore")
+            if (localKeystore.exists()) {
+                storeFile = localKeystore
+                storePassword = "yungmusic2026"
+                keyAlias = "yungmusic"
+                keyPassword = "yungmusic2026"
             } else {
-                storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
-                storePassword = "android"
-                keyAlias = "androiddebugkey"
-                keyPassword = "android"
+                val keystorePropertiesFile = rootProject.file("keystore.properties")
+                if (keystorePropertiesFile.exists()) {
+                    val keystoreProperties = Properties()
+                    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+                    storeFile = file(keystoreProperties["storeFile"] as String)
+                    storePassword = keystoreProperties["storePassword"] as String
+                    keyAlias = keystoreProperties["keyAlias"] as String
+                    keyPassword = keystoreProperties["keyPassword"] as String
+                } else if (System.getenv("STORE_PASSWORD") != null) {
+                    storeFile = file("keystore/release.keystore")
+                    storePassword = System.getenv("STORE_PASSWORD")
+                    keyAlias = System.getenv("KEY_ALIAS")
+                    keyPassword = System.getenv("KEY_PASSWORD")
+                } else {
+                    storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
+                    storePassword = "android"
+                    keyAlias = "androiddebugkey"
+                    keyPassword = "android"
+                }
             }
         }
         getByName("debug") {
@@ -262,7 +270,7 @@ dependencies {
     "gmsImplementation"(libs.cast.framework)
 
     implementation(libs.room.runtime)
-    implementation(libs.kuromoji.ipadic)
+    "gmsImplementation"(libs.kuromoji.ipadic)
     implementation(libs.pinyin4j)
     implementation(libs.squigglyslider)
     ksp(libs.room.compiler)
@@ -294,10 +302,10 @@ dependencies {
 
     implementation(libs.timber)
 
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
+    // Firebase - only in GMS flavor
+    "gmsImplementation"(platform(libs.firebase.bom))
+    "gmsImplementation"(libs.firebase.analytics)
 
-    // AdMob
-    implementation(libs.play.services.ads)
+    // AdMob - only in GMS flavor
+    "gmsImplementation"(libs.play.services.ads)
 }

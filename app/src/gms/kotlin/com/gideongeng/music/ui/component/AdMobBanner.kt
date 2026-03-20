@@ -1,6 +1,6 @@
 /**
- * YungMusic AdMob Banner Component
- * Displays banner ads using Google AdMob
+ * YungMusic AdMob Banner Component (GMS Variant)
+ * Displays banner ads using Google AdMob.
  */
 
 package com.gideongeng.music.ui.component
@@ -16,7 +16,7 @@ import com.google.android.gms.ads.AdView
 /**
  * AdMob Banner Ad Component
  * 
- * @param adUnitId The AdMob ad unit ID (use test ID for testing)
+ * @param adUnitId The AdMob ad unit ID
  * @param modifier Modifier for the banner container
  */
 @Composable

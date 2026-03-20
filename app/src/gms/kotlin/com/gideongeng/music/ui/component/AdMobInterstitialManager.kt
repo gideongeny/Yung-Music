@@ -1,6 +1,6 @@
 /**
- * YungMusic AdMob Interstitial Manager
- * Manages interstitial ad loading and display
+ * YungMusic AdMob Interstitial Manager (GMS Variant)
+ * Manages interstitial ad loading and display for the GMS flavor.
  */
 
 package com.gideongeng.music.ui.component

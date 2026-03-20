@@ -119,7 +119,7 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import com.google.android.gms.ads.MobileAds
+import com.gideongeng.music.utils.IntegrationsProvider
 import com.gideongeng.music.innertube.YouTube
 import com.gideongeng.music.innertube.models.SongItem
 import com.gideongeng.music.innertube.models.WatchEndpoint
@@ -299,8 +299,8 @@ class MainActivity : ComponentActivity() {
         // Initialize Listen Together manager
         listenTogetherManager.initialize()
 
-        // Initialize AdMob
-        MobileAds.initialize(this) {}
+        // Initialize Platform Integrations (Ads, Analytics)
+        IntegrationsProvider.integrations.initialize(this)
         adMobInterstitialManager = AdMobInterstitialManager(
             this,
             getString(R.string.ad_unit_id_interstitial)

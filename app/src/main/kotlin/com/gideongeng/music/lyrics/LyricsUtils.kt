@@ -6,7 +6,6 @@
 package com.gideongeng.music.lyrics
 
 import android.text.format.DateUtils
-import com.atilika.kuromoji.ipadic.Tokenizer
 import net.sourceforge.pinyin4j.PinyinHelper
 import java.util.Locale
 import kotlinx.coroutines.Dispatchers
@@ -277,9 +276,7 @@ object LyricsUtils {
     )
 
     // Lazy initialized Tokenizer
-    private val kuromojiTokenizer: Tokenizer by lazy {
-        Tokenizer()
-    }
+    private val japaneseRomajiHelper = JapaneseRomajiHelperImpl()
 
     fun parseLyrics(lyrics: String): List<LyricsEntry> {
         // Unescape JSON string if needed
@@ -559,22 +556,8 @@ object LyricsUtils {
         return romajiBuilder.toString().lowercase()
     }
 
-    suspend fun romanizeJapanese(text: String): String = withContext(Dispatchers.Default) {
-        val tokens = kuromojiTokenizer.tokenize(text)
-        val romanizedTokens = tokens.mapIndexed { index, token ->
-            val currentReading = if (token.reading.isNullOrEmpty() || token.reading == "*") {
-                token.surface
-            } else {
-                token.reading
-            }
-            val nextTokenReading = if (index + 1 < tokens.size) {
-                tokens[index + 1].reading?.takeIf { it.isNotEmpty() && it != "*" } ?: tokens[index + 1].surface
-            } else {
-                null
-            }
-            katakanaToRomaji(currentReading, nextTokenReading)
-        }
-        romanizedTokens.joinToString(" ")
+    fun romanizeJapanese(text: String): String {
+        return japaneseRomajiHelper.romanize(text)
     }
 
     fun katakanaToRomaji(katakana: String?, nextKatakana: String? = null): String {
