@@ -104,6 +104,7 @@ This project wouldn't be possible without the incredible open-source community:
 * [**Kizzy**](https://github.com/dead8309/Kizzy) – Discord Rich Presence inspiration.
 * [**Better Lyrics**](https://better-lyrics.boidu.dev) – Unmatched time-synced lyrics integration.
 * [**SimpMusic**](https://github.com/maxrave-dev/SimpMusic) – For the robust SimpMusic Lyrics API.
+* [**Metrolist**](https://github.com/metrolist/metrolist) – For the core architecture and UI inspiration.
 
 <div align="center">
   <br/>

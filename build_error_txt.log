@@ -1,0 +1,1267 @@
+Initialized native services in: C:\Users\mukht\.gradle\native
+Initialized jansi services in: C:\Users\mukht\.gradle\native
+The client will now receive all logging from the daemon (pid: 33176). The daemon log file: C:\Users\mukht\.gradle\daemon\9.2.1\daemon-33176.out.log
+Starting 5th build in daemon [uptime: 21 mins 4.037 secs, performance: 98%, GC rate: 0.01/s, heap usage: 3% of 2.6 GiB]
+Using 12 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=true, configureOnDemand=false, configurationCache=false, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=true, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Now considering [C:\Users\mukht\Desktop\Android\Yung-Music-main] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\settings.gradle.kts'.
+Projects loaded. Root project using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\build.gradle.kts'.
+Included projects: [root project 'YungMusic', project ':app', project ':betterlyrics', project ':innertube', project ':kizzy', project ':kugou', project ':lastfm', project ':lrclib', project ':simpmusic']
+
+> Configure project :
+Evaluating root project 'YungMusic' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\build.gradle.kts'.
+Resolved plugin [id: 'com.google.dagger.hilt.android', version: '2.57.2', apply: false]
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.3.4', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0', apply: false]
+Resolved plugin [id: 'com.google.gms.google-services', version: '4.4.4', apply: false]
+
+> Configure project :app
+Evaluating project ':app' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build.gradle.kts'.
+Resolved plugin [id: 'com.android.application']
+Resolved plugin [id: 'org.jetbrains.kotlin.android']
+Resolved plugin [id: 'com.google.dagger.hilt.android', version: '2.57.2']
+Resolved plugin [id: 'com.google.devtools.ksp', version: '2.3.4']
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.compose', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'com.google.gms.google-services']
+Using default execution profile
+Build 371d05e5-768b-4476-ba04-2fa822f10894 is started
+Using Kotlin Gradle Plugin gradle813 variant
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+
+> Configure project :betterlyrics
+Evaluating project ':betterlyrics' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\betterlyrics\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :innertube
+Evaluating project ':innertube' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\innertube\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :kizzy
+Evaluating project ':kizzy' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\kizzy\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :kugou
+Evaluating project ':kugou' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\kugou\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :lastfm
+Evaluating project ':lastfm' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\lastfm\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :lrclib
+Evaluating project ':lrclib' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\lrclib\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+
+> Configure project :simpmusic
+Evaluating project ':simpmusic' using build file 'C:\Users\mukht\Desktop\Android\Yung-Music-main\simpmusic\build.gradle.kts'.
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization', version: '2.3.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm']
+Using Kotlin Gradle Plugin gradle813 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+All projects evaluated.
+Task name matched 'assembleUniversalFossRelease'
+Selected primary task 'assembleUniversalFossRelease' from project :
+Tasks to be executed: [task ':innertube:checkKotlinGradlePluginConfigurationErrors', task ':innertube:compileKotlin', task ':innertube:compileJava', task ':innertube:processResources', task ':innertube:classes', task ':innertube:jar', task ':kugou:checkKotlinGradlePluginConfigurationErrors', task ':kugou:compileKotlin', task ':kugou:compileJava', task ':kugou:processResources', task ':kugou:classes', task ':kugou:jar', task ':lrclib:checkKotlinGradlePluginConfigurationErrors', task ':lrclib:compileKotlin', task ':lrclib:compileJava', task ':lrclib:processResources', task ':lrclib:classes', task ':lrclib:jar', task ':kizzy:checkKotlinGradlePluginConfigurationErrors', task ':kizzy:compileKotlin', task ':kizzy:compileJava', task ':kizzy:processResources', task ':kizzy:classes', task ':kizzy:jar', task ':lastfm:checkKotlinGradlePluginConfigurationErrors', task ':lastfm:compileKotlin', task ':lastfm:compileJava', task ':lastfm:processResources', task ':lastfm:classes', task ':lastfm:jar', task ':betterlyrics:checkKotlinGradlePluginConfigurationErrors', task ':betterlyrics:compileKotlin', task ':betterlyrics:compileJava', task ':betterlyrics:processResources', task ':betterlyrics:classes', task ':betterlyrics:jar', task ':simpmusic:checkKotlinGradlePluginConfigurationErrors', task ':simpmusic:compileKotlin', task ':simpmusic:compileJava', task ':simpmusic:processResources', task ':simpmusic:classes', task ':simpmusic:jar', task ':app:preBuild', task ':app:preUniversalFossReleaseBuild', task ':app:mergeUniversalFossReleaseJniLibFolders', task ':app:mergeUniversalFossReleaseNativeLibs', task ':app:stripUniversalFossReleaseDebugSymbols', task ':app:extractUniversalFossReleaseNativeSymbolTables', task ':app:mergeUniversalFossReleaseNativeDebugMetadata', task ':app:mergeUniversalFossReleaseArtProfile', task ':app:expandUniversalFossReleaseL8ArtProfileWildcards', task ':app:checkUniversalFossReleaseDuplicateClasses', task ':app:buildKotlinToolingMetadata', task ':app:checkKotlinGradlePluginConfigurationErrors', task ':app:generateUniversalFossReleaseBuildConfig', task ':app:checkUniversalFossReleaseAarMetadata', task ':app:processUniversalFossReleaseNavigationResources', task ':app:compileUniversalFossReleaseNavigationResources', task ':app:generateUniversalFossReleaseResValues', task ':app:processUniversalFossReleaseGoogleServices', task ':app:mapUniversalFossReleaseSourceSetPaths', task ':app:extractUniversalFossReleaseSupportedLocales', task ':app:generateUniversalFossReleaseLocaleConfig', task ':app:generateUniversalFossReleaseResources', task ':app:mergeUniversalFossReleaseResources', task ':app:createUniversalFossReleaseCompatibleScreenManifests', task ':app:extractDeepLinksUniversalFossRelease', task ':app:processUniversalFossReleaseMainManifest', task ':app:processUniversalFossReleaseManifest', task ':app:processUniversalFossReleaseManifestForPackage', task ':app:processUniversalFossReleaseResources', task ':app:kspUniversalFossReleaseKotlin', task ':app:compileUniversalFossReleaseKotlin', task ':app:javaPreCompileUniversalFossRelease', task ':app:compileUniversalFossReleaseJavaWithJavac', task ':app:hiltAggregateDepsUniversalFossRelease', task ':app:hiltJavaCompileUniversalFossRelease', task ':app:transformUniversalFossReleaseClassesWithAsm', task ':app:expandUniversalFossReleaseArtProfileWildcards', task ':app:extractProguardFiles', task ':app:mergeUniversalFossReleaseGeneratedProguardFiles', task ':app:processUniversalFossReleaseJavaRes', task ':app:mergeUniversalFossReleaseJavaResource', task ':app:mergeUniversalFossReleaseStartupProfile', task ':app:minifyUniversalFossReleaseWithR8', task ':app:l8DexDesugarLibUniversalFossRelease', task ':app:produceUniversalFossReleaseComposeMapping', task ':app:reportUniversalFossReleaseComposeMappingErrors', task ':app:mergeUniversalFossReleaseComposeMapping', task ':app:compileUniversalFossReleaseArtProfile', task ':app:mergeUniversalFossReleaseShaders', task ':app:compileUniversalFossReleaseShaders', task ':app:generateUniversalFossReleaseAssets', task ':app:mergeUniversalFossReleaseAssets', task ':app:compressUniversalFossReleaseAssets', task ':app:extractUniversalFossReleaseVersionControlInfo', task ':app:generateUniversalFossReleaseLintVitalReportModel', task ':app:lintVitalAnalyzeUniversalFossRelease', task ':app:lintVitalReportUniversalFossRelease', task ':app:lintVitalUniversalFossRelease', task ':app:convertShrunkResourcesToBinaryUniversalFossRelease', task ':app:optimizeUniversalFossReleaseResources', task ':app:validateSigningUniversalFossRelease', task ':app:writeUniversalFossReleaseAppMetadata', task ':app:writeUniversalFossReleaseSigningConfigVersions', task ':app:packageUniversalFossRelease', task ':app:createUniversalFossReleaseApkListingFileRedirect', task ':app:assembleUniversalFossRelease']
+Tasks that were excluded: []
+work action Parameters of ExtractJniTransform (Thread[#633,Execution worker,5,main]) started.
+Resolve mutations for :lrclib:checkKotlinGradlePluginConfigurationErrors (Thread[#636,Execution worker Thread 4,5,main]) started.
+Resolve mutations for :innertube:checkKotlinGradlePluginConfigurationErrors (Thread[#634,Execution worker Thread 2,5,main]) started.
+Resolve mutations for :kugou:checkKotlinGradlePluginConfigurationErrors (Thread[#635,Execution worker Thread 3,5,main]) started.
+Resolve mutations for :kizzy:checkKotlinGradlePluginConfigurationErrors (Thread[#637,Execution worker Thread 5,5,main]) started.
+Resolve mutations for :lastfm:checkKotlinGradlePluginConfigurationErrors (Thread[#638,Execution worker Thread 6,5,main]) started.
+:innertube:checkKotlinGradlePluginConfigurationErrors (Thread[#634,Execution worker Thread 2,5,main]) started.
+:kugou:checkKotlinGradlePluginConfigurationErrors (Thread[#640,Execution worker Thread 8,5,main]) started.
+:lrclib:checkKotlinGradlePluginConfigurationErrors (Thread[#641,Execution worker Thread 9,5,main]) started.
+Resolve mutations for :betterlyrics:checkKotlinGradlePluginConfigurationErrors (Thread[#639,Execution worker Thread 7,5,main]) started.
+Resolve mutations for :simpmusic:checkKotlinGradlePluginConfigurationErrors (Thread[#635,Execution worker Thread 3,5,main]) started.
+:kizzy:checkKotlinGradlePluginConfigurationErrors (Thread[#642,Execution worker Thread 10,5,main]) started.
+:lastfm:checkKotlinGradlePluginConfigurationErrors (Thread[#636,Execution worker Thread 4,5,main]) started.
+:betterlyrics:checkKotlinGradlePluginConfigurationErrors (Thread[#643,Execution worker Thread 11,5,main]) started.
+:simpmusic:checkKotlinGradlePluginConfigurationErrors (Thread[#635,Execution worker Thread 3,5,main]) started.
+work action Parameters of IdentityTransform (Thread[#633,Execution worker,5,main]) started.
+work action Parameters of ExtractProGuardRulesTransform (Thread[#633,Execution worker,5,main]) started.
+work action Parameters of FilterShrinkerRulesTransform (Thread[#633,Execution worker,5,main]) started.
+work action Parameters of CopyTransform (Thread[#633,Execution worker,5,main]) started.
+work action Parameters of AggregatedPackagesTransform (Thread[#633,Execution worker,5,main]) started.
+work action Parameters of IdentityTransform (Thread[#633,Execution worker,5,main]) started.
+Resolve mutations for :app:preBuild (Thread[#633,Execution worker,5,main]) started.
+:app:preBuild (Thread[#633,Execution worker,5,main]) started.
+
+> Task :app:preBuild UP-TO-DATE
+Skipping task ':app:preBuild' as it has no actions.
+Resolve mutations for :app:preUniversalFossReleaseBuild (Thread[#633,Execution worker,5,main]) started.
+:app:preUniversalFossReleaseBuild (Thread[#633,Execution worker,5,main]) started.
+
+> Task :lrclib:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':lrclib:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :app:preUniversalFossReleaseBuild UP-TO-DATE
+Skipping task ':app:preUniversalFossReleaseBuild' as it has no actions.
+Resolve mutations for :app:mergeUniversalFossReleaseJniLibFolders (Thread[#633,Execution worker,5,main]) started.
+
+> Task :simpmusic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':simpmusic:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :kugou:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':kugou:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :lrclib:compileKotlin (Thread[#641,Execution worker Thread 9,5,main]) started.
+Resolve mutations for :kugou:compileKotlin (Thread[#637,Execution worker Thread 5,5,main]) started.
+
+> Task :lastfm:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':lastfm:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :simpmusic:compileKotlin (Thread[#633,Execution worker,5,main]) started.
+:app:mergeUniversalFossReleaseJniLibFolders (Thread[#640,Execution worker Thread 8,5,main]) started.
+Resolve mutations for :lastfm:compileKotlin (Thread[#636,Execution worker Thread 4,5,main]) started.
+
+> Task :kizzy:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':kizzy:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :innertube:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':innertube:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+
+> Task :betterlyrics:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':betterlyrics:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :kizzy:compileKotlin (Thread[#642,Execution worker Thread 10,5,main]) started.
+Resolve mutations for :innertube:compileKotlin (Thread[#643,Execution worker Thread 11,5,main]) started.
+Resolve mutations for :betterlyrics:compileKotlin (Thread[#634,Execution worker Thread 2,5,main]) started.
+:lastfm:compileKotlin (Thread[#636,Execution worker Thread 4,5,main]) started.
+:kugou:compileKotlin (Thread[#637,Execution worker Thread 5,5,main]) started.
+:kizzy:compileKotlin (Thread[#633,Execution worker,5,main]) started.
+:innertube:compileKotlin (Thread[#643,Execution worker Thread 11,5,main]) started.
+:simpmusic:compileKotlin (Thread[#638,Execution worker Thread 6,5,main]) started.
+:betterlyrics:compileKotlin (Thread[#634,Execution worker Thread 2,5,main]) started.
+:lrclib:compileKotlin (Thread[#641,Execution worker Thread 9,5,main]) started.
+
+> Task :app:mergeUniversalFossReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':app:mergeUniversalFossReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeUniversalFossReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :app:mergeUniversalFossReleaseArtProfile (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:mergeUniversalFossReleaseArtProfile (Thread[#640,Execution worker Thread 8,5,main]) started.
+
+> Task :innertube:compileKotlin UP-TO-DATE
+Caching disabled for task ':innertube:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':innertube:compileKotlin' as it is up-to-date.
+
+> Task :simpmusic:compileKotlin UP-TO-DATE
+Caching disabled for task ':simpmusic:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':simpmusic:compileKotlin' as it is up-to-date.
+
+> Task :lrclib:compileKotlin UP-TO-DATE
+Caching disabled for task ':lrclib:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':lrclib:compileKotlin' as it is up-to-date.
+Resolve mutations for :simpmusic:compileJava (Thread[#638,Execution worker Thread 6,5,main]) started.
+Resolve mutations for :lrclib:compileJava (Thread[#641,Execution worker Thread 9,5,main]) started.
+:lrclib:compileJava (Thread[#638,Execution worker Thread 6,5,main]) started.
+:simpmusic:compileJava (Thread[#641,Execution worker Thread 9,5,main]) started.
+Resolve mutations for :innertube:compileJava (Thread[#643,Execution worker Thread 11,5,main]) started.
+
+> Task :kizzy:compileKotlin UP-TO-DATE
+Caching disabled for task ':kizzy:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':kizzy:compileKotlin' as it is up-to-date.
+
+> Task :betterlyrics:compileKotlin UP-TO-DATE
+Caching disabled for task ':betterlyrics:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':betterlyrics:compileKotlin' as it is up-to-date.
+
+> Task :lastfm:compileKotlin UP-TO-DATE
+Caching disabled for task ':lastfm:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':lastfm:compileKotlin' as it is up-to-date.
+
+> Task :kugou:compileKotlin UP-TO-DATE
+Caching disabled for task ':kugou:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':kugou:compileKotlin' as it is up-to-date.
+Resolve mutations for :kizzy:compileJava (Thread[#633,Execution worker,5,main]) started.
+Resolve mutations for :betterlyrics:compileJava (Thread[#635,Execution worker Thread 3,5,main]) started.
+:kizzy:compileJava (Thread[#633,Execution worker,5,main]) started.
+
+> Task :lrclib:compileJava NO-SOURCE
+Skipping task ':lrclib:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :lastfm:compileJava (Thread[#636,Execution worker Thread 4,5,main]) started.
+Resolve mutations for :kugou:compileJava (Thread[#637,Execution worker Thread 5,5,main]) started.
+:betterlyrics:compileJava (Thread[#635,Execution worker Thread 3,5,main]) started.
+:innertube:compileJava (Thread[#643,Execution worker Thread 11,5,main]) started.
+:lastfm:compileJava (Thread[#636,Execution worker Thread 4,5,main]) started.
+
+> Task :innertube:compileJava NO-SOURCE
+Skipping task ':innertube:compileJava' as it has no source files and no previous output files.
+
+> Task :betterlyrics:compileJava NO-SOURCE
+Skipping task ':betterlyrics:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :innertube:processResources (Thread[#643,Execution worker Thread 11,5,main]) started.
+Resolve mutations for :betterlyrics:processResources (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :lastfm:compileJava NO-SOURCE
+Skipping task ':lastfm:compileJava' as it has no source files and no previous output files.
+:kugou:compileJava (Thread[#637,Execution worker Thread 5,5,main]) started.
+:innertube:processResources (Thread[#639,Execution worker Thread 7,5,main]) started.
+Resolve mutations for :lastfm:processResources (Thread[#636,Execution worker Thread 4,5,main]) started.
+:lastfm:processResources (Thread[#636,Execution worker Thread 4,5,main]) started.
+:betterlyrics:processResources (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :kizzy:compileJava NO-SOURCE
+Skipping task ':kizzy:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :kizzy:processResources (Thread[#633,Execution worker,5,main]) started.
+:kizzy:processResources (Thread[#633,Execution worker,5,main]) started.
+
+> Task :betterlyrics:processResources NO-SOURCE
+Skipping task ':betterlyrics:processResources' as it has no source files and no previous output files.
+Resolve mutations for :betterlyrics:classes (Thread[#635,Execution worker Thread 3,5,main]) started.
+:betterlyrics:classes (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :betterlyrics:classes UP-TO-DATE
+Skipping task ':betterlyrics:classes' as it has no actions.
+Resolve mutations for :lrclib:processResources (Thread[#638,Execution worker Thread 6,5,main]) started.
+
+> Task :simpmusic:compileJava NO-SOURCE
+Skipping task ':simpmusic:compileJava' as it has no source files and no previous output files.
+:lrclib:processResources (Thread[#638,Execution worker Thread 6,5,main]) started.
+Resolve mutations for :simpmusic:processResources (Thread[#641,Execution worker Thread 9,5,main]) started.
+:simpmusic:processResources (Thread[#641,Execution worker Thread 9,5,main]) started.
+Resolve mutations for :betterlyrics:jar (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :kizzy:processResources NO-SOURCE
+Skipping task ':kizzy:processResources' as it has no source files and no previous output files.
+
+> Task :innertube:processResources NO-SOURCE
+Skipping task ':innertube:processResources' as it has no source files and no previous output files.
+Resolve mutations for :kizzy:classes (Thread[#633,Execution worker,5,main]) started.
+:betterlyrics:jar (Thread[#635,Execution worker Thread 3,5,main]) started.
+Resolve mutations for :innertube:classes (Thread[#639,Execution worker Thread 7,5,main]) started.
+:innertube:classes (Thread[#639,Execution worker Thread 7,5,main]) started.
+
+> Task :simpmusic:processResources NO-SOURCE
+Skipping task ':simpmusic:processResources' as it has no source files and no previous output files.
+
+> Task :innertube:classes UP-TO-DATE
+Skipping task ':innertube:classes' as it has no actions.
+Resolve mutations for :innertube:jar (Thread[#639,Execution worker Thread 7,5,main]) started.
+Resolve mutations for :simpmusic:classes (Thread[#641,Execution worker Thread 9,5,main]) started.
+:simpmusic:classes (Thread[#641,Execution worker Thread 9,5,main]) started.
+:innertube:jar (Thread[#639,Execution worker Thread 7,5,main]) started.
+
+> Task :kugou:compileJava NO-SOURCE
+Skipping task ':kugou:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :kugou:processResources (Thread[#637,Execution worker Thread 5,5,main]) started.
+:kugou:processResources (Thread[#637,Execution worker Thread 5,5,main]) started.
+
+> Task :lrclib:processResources NO-SOURCE
+Skipping task ':lrclib:processResources' as it has no source files and no previous output files.
+Resolve mutations for :lrclib:classes (Thread[#638,Execution worker Thread 6,5,main]) started.
+:lrclib:classes (Thread[#638,Execution worker Thread 6,5,main]) started.
+:kizzy:classes (Thread[#633,Execution worker,5,main]) started.
+
+> Task :betterlyrics:jar UP-TO-DATE
+Caching disabled for task ':betterlyrics:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':betterlyrics:jar' as it is up-to-date.
+
+> Task :kizzy:classes UP-TO-DATE
+Skipping task ':kizzy:classes' as it has no actions.
+
+> Task :lrclib:classes UP-TO-DATE
+Skipping task ':lrclib:classes' as it has no actions.
+Resolve mutations for :lrclib:jar (Thread[#638,Execution worker Thread 6,5,main]) started.
+work action resolve betterlyrics.jar (project :betterlyrics) (Thread[#635,Execution worker Thread 3,5,main]) started.
+ExtractJniTransform (Thread[#635,Execution worker Thread 3,5,main]) started.
+:lrclib:jar (Thread[#638,Execution worker Thread 6,5,main]) started.
+Resolve mutations for :kizzy:jar (Thread[#633,Execution worker,5,main]) started.
+IdentityTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+
+> Task :lastfm:processResources NO-SOURCE
+Skipping task ':lastfm:processResources' as it has no source files and no previous output files.
+:kizzy:jar (Thread[#636,Execution worker Thread 4,5,main]) started.
+Resolve mutations for :lastfm:classes (Thread[#632,included builds,5,main]) started.
+
+> Task :simpmusic:classes UP-TO-DATE
+Skipping task ':simpmusic:classes' as it has no actions.
+Resolve mutations for :simpmusic:jar (Thread[#641,Execution worker Thread 9,5,main]) started.
+:lastfm:classes (Thread[#632,included builds,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+
+> Task :kugou:processResources NO-SOURCE
+Skipping task ':kugou:processResources' as it has no source files and no previous output files.
+IdentityTransform (Thread[#635,Execution worker Thread 3,5,main]) started.
+Resolve mutations for :kugou:classes (Thread[#637,Execution worker Thread 5,5,main]) started.
+:kugou:classes (Thread[#637,Execution worker Thread 5,5,main]) started.
+
+> Task :kugou:classes UP-TO-DATE
+Skipping task ':kugou:classes' as it has no actions.
+Resolve mutations for :kugou:jar (Thread[#637,Execution worker Thread 5,5,main]) started.
+:kugou:jar (Thread[#637,Execution worker Thread 5,5,main]) started.
+
+> Task :lastfm:classes UP-TO-DATE
+Skipping task ':lastfm:classes' as it has no actions.
+Resolve mutations for :lastfm:jar (Thread[#635,Execution worker Thread 3,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+:lastfm:jar (Thread[#635,Execution worker Thread 3,5,main]) started.
+IdentityTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+CopyTransform (Thread[#632,included builds,5,main]) started.
+AggregatedPackagesTransform (Thread[#632,included builds,5,main]) started.
+
+> Task :kizzy:jar UP-TO-DATE
+Caching disabled for task ':kizzy:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':kizzy:jar' as it is up-to-date.
+work action resolve kizzy.jar (project :kizzy) (Thread[#636,Execution worker Thread 4,5,main]) started.
+ExtractJniTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[#642,Execution worker Thread 10,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#634,Execution worker Thread 2,5,main]) started.
+
+> Task :lrclib:jar UP-TO-DATE
+Caching disabled for task ':lrclib:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':lrclib:jar' as it is up-to-date.
+IdentityTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#634,Execution worker Thread 2,5,main]) started.
+
+> Task :innertube:jar UP-TO-DATE
+Caching disabled for task ':innertube:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':innertube:jar' as it is up-to-date.
+work action resolve lrclib.jar (project :lrclib) (Thread[#638,Execution worker Thread 6,5,main]) started.
+work action resolve innertube.jar (project :innertube) (Thread[#632,included builds,5,main]) started.
+ExtractJniTransform (Thread[#642,Execution worker Thread 10,5,main]) started.
+:simpmusic:jar (Thread[#641,Execution worker Thread 9,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+CopyTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+
+> Task :lastfm:jar UP-TO-DATE
+Caching disabled for task ':lastfm:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':lastfm:jar' as it is up-to-date.
+work action resolve lastfm.jar (project :lastfm) (Thread[#635,Execution worker Thread 3,5,main]) started.
+ExtractJniTransform (Thread[#635,Execution worker Thread 3,5,main]) started.
+CopyTransform (Thread[#633,Execution worker,5,main]) started.
+CopyTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+ExtractJniTransform (Thread[#632,included builds,5,main]) started.
+IdentityTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+IdentityTransform (Thread[#638,Execution worker Thread 6,5,main]) started.
+IdentityTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+CopyTransform (Thread[#638,Execution worker Thread 6,5,main]) started.
+AggregatedPackagesTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+IdentityTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+IdentityTransform (Thread[#642,Execution worker Thread 10,5,main]) started.
+IdentityTransform (Thread[#632,included builds,5,main]) started.
+
+> Task :simpmusic:jar UP-TO-DATE
+Caching disabled for task ':simpmusic:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':simpmusic:jar' as it is up-to-date.
+
+> Task :kugou:jar UP-TO-DATE
+Caching disabled for task ':kugou:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':kugou:jar' as it is up-to-date.
+work action resolve simpmusic.jar (project :simpmusic) (Thread[#641,Execution worker Thread 9,5,main]) started.
+work action resolve kugou.jar (project :kugou) (Thread[#636,Execution worker Thread 4,5,main]) started.
+ExtractJniTransform (Thread[#641,Execution worker Thread 9,5,main]) started.
+ExtractJniTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+IdentityTransform (Thread[#632,included builds,5,main]) started.
+IdentityTransform (Thread[#637,Execution worker Thread 5,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#635,Execution worker Thread 3,5,main]) started.
+IdentityTransform (Thread[#632,included builds,5,main]) started.
+IdentityTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+IdentityTransform (Thread[#634,Execution worker Thread 2,5,main]) started.
+CopyTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+AggregatedPackagesTransform (Thread[#632,included builds,5,main]) started.
+AggregatedPackagesTransform (Thread[#643,Execution worker Thread 11,5,main]) started.
+AggregatedPackagesTransform (Thread[#638,Execution worker Thread 6,5,main]) started.
+ExtractProGuardRulesTransform (Thread[#642,Execution worker Thread 10,5,main]) started.
+IdentityTransform (Thread[#637,Execution worker Thread 5,5,main]) started.
+IdentityTransform (Thread[#634,Execution worker Thread 2,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#642,Execution worker Thread 10,5,main]) started.
+CopyTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+FilterShrinkerRulesTransform (Thread[#632,included builds,5,main]) started.
+AggregatedPackagesTransform (Thread[#636,Execution worker Thread 4,5,main]) started.
+AggregatedPackagesTransform (Thread[#639,Execution worker Thread 7,5,main]) started.
+
+> Task :app:mergeUniversalFossReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':app:mergeUniversalFossReleaseArtProfile' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeUniversalFossReleaseArtProfile' as it is up-to-date.
+Resolve mutations for :app:mergeUniversalFossReleaseNativeLibs (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:mergeUniversalFossReleaseNativeLibs (Thread[#640,Execution worker Thread 8,5,main]) started.
+Resolve mutations for :app:expandUniversalFossReleaseL8ArtProfileWildcards (Thread[#632,included builds,5,main]) started.
+:app:expandUniversalFossReleaseL8ArtProfileWildcards (Thread[#632,included builds,5,main]) started.
+
+> Task :app:expandUniversalFossReleaseL8ArtProfileWildcards UP-TO-DATE
+Caching disabled for task ':app:expandUniversalFossReleaseL8ArtProfileWildcards' because:
+  Build cache is disabled
+Skipping task ':app:expandUniversalFossReleaseL8ArtProfileWildcards' as it is up-to-date.
+Resolve mutations for :app:checkUniversalFossReleaseDuplicateClasses (Thread[#632,included builds,5,main]) started.
+:app:checkUniversalFossReleaseDuplicateClasses (Thread[#632,included builds,5,main]) started.
+
+> Task :app:checkUniversalFossReleaseDuplicateClasses UP-TO-DATE
+Caching disabled for task ':app:checkUniversalFossReleaseDuplicateClasses' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkUniversalFossReleaseDuplicateClasses' as it is up-to-date.
+Resolve mutations for :app:buildKotlinToolingMetadata (Thread[#632,included builds,5,main]) started.
+:app:buildKotlinToolingMetadata (Thread[#632,included builds,5,main]) started.
+
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+Caching disabled for task ':app:buildKotlinToolingMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:buildKotlinToolingMetadata' as it is up-to-date.
+Resolve mutations for :app:checkKotlinGradlePluginConfigurationErrors (Thread[#632,included builds,5,main]) started.
+:app:checkKotlinGradlePluginConfigurationErrors (Thread[#632,included builds,5,main]) started.
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':app:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :app:generateUniversalFossReleaseBuildConfig (Thread[#632,included builds,5,main]) started.
+:app:generateUniversalFossReleaseBuildConfig (Thread[#632,included builds,5,main]) started.
+
+> Task :app:generateUniversalFossReleaseBuildConfig UP-TO-DATE
+Caching disabled for task ':app:generateUniversalFossReleaseBuildConfig' because:
+  Build cache is disabled
+Skipping task ':app:generateUniversalFossReleaseBuildConfig' as it is up-to-date.
+Resolve mutations for :app:checkUniversalFossReleaseAarMetadata (Thread[#632,included builds,5,main]) started.
+:app:checkUniversalFossReleaseAarMetadata (Thread[#632,included builds,5,main]) started.
+
+> Task :app:checkUniversalFossReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':app:checkUniversalFossReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkUniversalFossReleaseAarMetadata' as it is up-to-date.
+Resolve mutations for :app:processUniversalFossReleaseNavigationResources (Thread[#639,Execution worker Thread 7,5,main]) started.
+:app:processUniversalFossReleaseNavigationResources (Thread[#639,Execution worker Thread 7,5,main]) started.
+
+> Task :app:processUniversalFossReleaseNavigationResources UP-TO-DATE
+Caching disabled for task ':app:processUniversalFossReleaseNavigationResources' because:
+  Build cache is disabled
+Skipping task ':app:processUniversalFossReleaseNavigationResources' as it is up-to-date.
+Resolve mutations for :app:compileUniversalFossReleaseNavigationResources (Thread[#635,Execution worker Thread 3,5,main]) started.
+:app:compileUniversalFossReleaseNavigationResources (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :app:compileUniversalFossReleaseNavigationResources UP-TO-DATE
+Caching disabled for task ':app:compileUniversalFossReleaseNavigationResources' because:
+  Build cache is disabled
+Skipping task ':app:compileUniversalFossReleaseNavigationResources' as it is up-to-date.
+Resolve mutations for :app:generateUniversalFossReleaseResValues (Thread[#635,Execution worker Thread 3,5,main]) started.
+:app:generateUniversalFossReleaseResValues (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :app:generateUniversalFossReleaseResValues UP-TO-DATE
+Caching disabled for task ':app:generateUniversalFossReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':app:generateUniversalFossReleaseResValues' as it is up-to-date.
+Resolve mutations for :app:processUniversalFossReleaseGoogleServices (Thread[#635,Execution worker Thread 3,5,main]) started.
+:app:processUniversalFossReleaseGoogleServices (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :app:processUniversalFossReleaseGoogleServices UP-TO-DATE
+Caching disabled for task ':app:processUniversalFossReleaseGoogleServices' because:
+  Build cache is disabled
+Skipping task ':app:processUniversalFossReleaseGoogleServices' as it is up-to-date.
+Resolve mutations for :app:mapUniversalFossReleaseSourceSetPaths (Thread[#635,Execution worker Thread 3,5,main]) started.
+:app:mapUniversalFossReleaseSourceSetPaths (Thread[#635,Execution worker Thread 3,5,main]) started.
+
+> Task :app:mergeUniversalFossReleaseNativeLibs
+Caching disabled for task ':app:mergeUniversalFossReleaseNativeLibs' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:mergeUniversalFossReleaseNativeLibs' is not up-to-date because:
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\merged_native_libs\universalFossRelease\mergeUniversalFossReleaseNativeLibs\out has been removed.
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\merged_native_libs\universalFossRelease\mergeUniversalFossReleaseNativeLibs\out\lib has been removed.
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\merged_native_libs\universalFossRelease\mergeUniversalFossReleaseNativeLibs\out\lib\arm64-v8a has been removed.
+  and more...
+
+> Task :app:mapUniversalFossReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':app:mapUniversalFossReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mapUniversalFossReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :app:stripUniversalFossReleaseDebugSymbols (Thread[#635,Execution worker Thread 3,5,main]) started.
+:app:stripUniversalFossReleaseDebugSymbols (Thread[#635,Execution worker Thread 3,5,main]) started.
+Resolve mutations for :app:extractUniversalFossReleaseSupportedLocales (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:extractUniversalFossReleaseSupportedLocales (Thread[#640,Execution worker Thread 8,5,main]) started.
+
+> Task :app:extractUniversalFossReleaseSupportedLocales UP-TO-DATE
+Caching disabled for task ':app:extractUniversalFossReleaseSupportedLocales' because:
+  Build cache is disabled
+Skipping task ':app:extractUniversalFossReleaseSupportedLocales' as it is up-to-date.
+Resolve mutations for :app:generateUniversalFossReleaseLocaleConfig (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:generateUniversalFossReleaseLocaleConfig (Thread[#640,Execution worker Thread 8,5,main]) started.
+
+> Task :app:generateUniversalFossReleaseLocaleConfig UP-TO-DATE
+Caching disabled for task ':app:generateUniversalFossReleaseLocaleConfig' because:
+  Build cache is disabled
+Skipping task ':app:generateUniversalFossReleaseLocaleConfig' as it is up-to-date.
+Resolve mutations for :app:generateUniversalFossReleaseResources (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:generateUniversalFossReleaseResources (Thread[#640,Execution worker Thread 8,5,main]) started.
+
+> Task :app:generateUniversalFossReleaseResources UP-TO-DATE
+Caching disabled for task ':app:generateUniversalFossReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:generateUniversalFossReleaseResources' as it is up-to-date.
+Resolve mutations for :app:mergeUniversalFossReleaseResources (Thread[#640,Execution worker Thread 8,5,main]) started.
+:app:mergeUniversalFossReleaseResources (Thread[#640,Execution worker Thread 8,5,main]) started.
+
+> Task :app:stripUniversalFossReleaseDebugSymbols
+Caching disabled for task ':app:stripUniversalFossReleaseDebugSymbols' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:stripUniversalFossReleaseDebugSymbols' is not up-to-date because:
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\stripped_native_libs\universalFossRelease\stripUniversalFossReleaseDebugSymbols\out has been removed.
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\stripped_native_libs\universalFossRelease\stripUniversalFossReleaseDebugSymbols\out\lib has been removed.
+  Output property 'outputDir' file C:\Users\mukht\Desktop\Android\Yung-Music-main\app\build\intermediates\stripped_native_libs\universalFossRelease\stripUniversalFossReleaseDebugSymbols\out\lib\arm64-v8a has been removed.
+  and more...
+The input changes require a full rebuild for incremental task ':app:stripUniversalFossReleaseDebugSymbols'.
+
+> Task :app:mergeUniversalFossReleaseResources
+Caching disabled for task ':app:mergeUniversalFossReleaseResources' because:
+  Build cache is disabled
+Task ':app:mergeUniversalFossReleaseResources' is not up-to-date because:
+  Task has failed previously.
+The input changes require a full rebuild for incremental task ':app:mergeUniversalFossReleaseResources'.
+[MergeResources] Inputs are non-incremental full task action.
+.\gradlew : ERROR: [color/ic_
+launcher_background] C:\Users
+\mukht\Desktop\Android\Yung-M
+usic-main\app\src\main\res\va
+lues\colors.xml [color/ic_lau
+ncher_background] C:\Users\mu
+kht\Desktop\Android\Yung-Musi
+c-main\app\src\main\res\value
+s\ic_launcher_background.xml:
+ Resource and asset merger: 
+Duplicate resources
+At line:1 char:1
++ .\gradlew 
+assembleUniversalFossRelease 
+--stacktrace --info > 
+build_er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (ERROR:   
+  [color/i...icate resourc   
+ es:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+> Task :app:mergeUniversalFossReleaseResources FAILED
+Build 371d05e5-768b-4476-ba04-2fa822f10894 is closed
+
+[Incubating] Problems report is available at: file:///C:/Users/mukht/Desktop/Android/Yung-Music-main/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with 
+an exception.
+
+* What went wrong:
+Execution failed for task ':a
+pp:mergeUniversalFossReleaseR
+esources'.
+> [color/ic_launcher_backgrou
+nd] C:\Users\mukht\Desktop\An
+droid\Yung-Music-main\app\src
+\main\res\values\colors.xml	[
+color/ic_launcher_background]
+ C:\Users\mukht\Desktop\Andro
+id\Yung-Music-main\app\src\ma
+in\res\values\ic_launcher_bac
+kground.xml: Error: 
+Duplicate resources
+
+* Try:
+> Run with --debug option to 
+get more log output.
+> Run with --scan to 
+generate a Build Scan 
+(powered by Develocity).
+> Get more help at 
+https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExec
+utionException: Execution 
+failed for task ':app:mergeUn
+iversalFossReleaseResources'.
+	at org.gradle.api.internal.t
+asks.execution.ExecuteActions
+TaskExecuter.lambda$executeIf
+Valid$1(ExecuteActionsTaskExe
+cuter.java:135)
+	at org.gradle.internal.Try$F
+ailure.ifSuccessfulOrElse(Try
+.java:288)
+	at org.gradle.api.internal.t
+asks.execution.ExecuteActions
+TaskExecuter.executeIfValid(E
+xecuteActionsTaskExecuter.jav
+a:133)
+	at org.gradle.api.internal.t
+asks.execution.ExecuteActions
+TaskExecuter.execute(ExecuteA
+ctionsTaskExecuter.java:121)
+	at org.gradle.api.internal.t
+asks.execution.ProblemsTaskPa
+thTrackingTaskExecuter.execut
+e(ProblemsTaskPathTrackingTas
+kExecuter.java:41)
+	at org.gradle.api.internal.t
+asks.execution.FinalizeProper
+tiesTaskExecuter.execute(Fina
+lizePropertiesTaskExecuter.ja
+va:46)
+	at org.gradle.api.internal.t
+asks.execution.ResolveTaskExe
+cutionModeExecuter.execute(Re
+solveTaskExecutionModeExecute
+r.java:51)
+	at org.gradle.api.internal.t
+asks.execution.SkipTaskWithNo
+ActionsExecuter.execute(SkipT
+askWithNoActionsExecuter.java
+:57)
+	at org.gradle.api.internal.t
+asks.execution.SkipOnlyIfTask
+Executer.execute(SkipOnlyIfTa
+skExecuter.java:74)
+	at org.gradle.api.internal.t
+asks.execution.CatchException
+TaskExecuter.execute(CatchExc
+eptionTaskExecuter.java:36)
+	at org.gradle.api.internal.t
+asks.execution.EventFiringTas
+kExecuter$1.executeTask(Event
+FiringTaskExecuter.java:77)
+	at org.gradle.api.internal.t
+asks.execution.EventFiringTas
+kExecuter$1.call(EventFiringT
+askExecuter.java:55)
+	at org.gradle.api.internal.t
+asks.execution.EventFiringTas
+kExecuter$1.call(EventFiringT
+askExecuter.java:52)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$CallableBuildOperationWo
+rker.execute(DefaultBuildOper
+ationRunner.java:209)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$CallableBuildOperationWo
+rker.execute(DefaultBuildOper
+ationRunner.java:204)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:66)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:166)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.call(DefaultBuildOperati
+onRunner.java:53)
+	at org.gradle.api.internal.t
+asks.execution.EventFiringTas
+kExecuter.execute(EventFiring
+TaskExecuter.java:52)
+	at org.gradle.execution.plan
+.DefaultNodeExecutor.executeL
+ocalTaskNode(DefaultNodeExecu
+tor.java:55)
+	at org.gradle.execution.plan
+.DefaultNodeExecutor.execute(
+DefaultNodeExecutor.java:34)
+	at org.gradle.execution.task
+graph.DefaultTaskExecutionGra
+ph$InvokeNodeExecutorsAction.
+execute(DefaultTaskExecutionG
+raph.java:355)
+	at org.gradle.execution.task
+graph.DefaultTaskExecutionGra
+ph$InvokeNodeExecutorsAction.
+execute(DefaultTaskExecutionG
+raph.java:343)
+	at org.gradle.execution.task
+graph.DefaultTaskExecutionGra
+ph$BuildOperationAwareExecuti
+onAction.lambda$execute$0(Def
+aultTaskExecutionGraph.java:3
+39)
+	at org.gradle.internal.opera
+tions.CurrentBuildOperationRe
+f.with(CurrentBuildOperationR
+ef.java:84)
+	at org.gradle.execution.task
+graph.DefaultTaskExecutionGra
+ph$BuildOperationAwareExecuti
+onAction.execute(DefaultTaskE
+xecutionGraph.java:339)
+	at org.gradle.execution.task
+graph.DefaultTaskExecutionGra
+ph$BuildOperationAwareExecuti
+onAction.execute(DefaultTaskE
+xecutionGraph.java:328)
+	at org.gradle.execution.plan
+.DefaultPlanExecutor$Executor
+Worker.execute(DefaultPlanExe
+cutor.java:459)
+	at org.gradle.execution.plan
+.DefaultPlanExecutor$Executor
+Worker.run(DefaultPlanExecuto
+r.java:376)
+	at org.gradle.internal.concu
+rrent.ExecutorPolicy$CatchAnd
+RecordFailures.onExecute(Exec
+utorPolicy.java:64)
+	at org.gradle.internal.concu
+rrent.AbstractManagedExecutor
+$1.run(AbstractManagedExecuto
+r.java:47)
+Caused by: com.android.build.
+gradle.tasks.ResourceExceptio
+n: [color/ic_launcher_backgro
+und] C:\Users\mukht\Desktop\A
+ndroid\Yung-Music-main\app\sr
+c\main\res\values\colors.xml	
+[color/ic_launcher_background
+] C:\Users\mukht\Desktop\Andr
+oid\Yung-Music-main\app\src\m
+ain\res\values\ic_launcher_ba
+ckground.xml: Error: 
+Duplicate resources
+	at com.android.build.gradle.
+tasks.MergeResources.doFullTa
+skAction(MergeResources.kt:33
+1)
+	at com.android.build.gradle.
+tasks.MergeResources.doTaskAc
+tion(MergeResources.kt:360)
+	at com.android.build.gradle.
+internal.tasks.NewIncremental
+Task$taskAction$$inlined$reco
+rdTaskAction$1.invoke(BaseTas
+k.kt:82)
+	at com.android.build.gradle.
+internal.tasks.Blocks.recordS
+pan(Blocks.java:51)
+	at com.android.build.gradle.
+internal.tasks.NewIncremental
+Task.taskAction(NewIncrementa
+lTask.kt:46)
+	at org.gradle.internal.refle
+ct.JavaMethod.invoke(JavaMeth
+od.java:125)
+	at org.gradle.api.internal.p
+roject.taskfactory.Incrementa
+lTaskAction.doExecute(Increme
+ntalTaskAction.java:45)
+	at org.gradle.api.internal.p
+roject.taskfactory.StandardTa
+skAction.execute(StandardTask
+Action.java:51)
+	at org.gradle.api.internal.p
+roject.taskfactory.Incrementa
+lTaskAction.execute(Increment
+alTaskAction.java:26)
+	at org.gradle.api.internal.p
+roject.taskfactory.StandardTa
+skAction.execute(StandardTask
+Action.java:29)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution$
+3.run(TaskExecution.java:252)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$1.execute(DefaultBuildOp
+erationRunner.java:29)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$1.execute(DefaultBuildOp
+erationRunner.java:26)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:66)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:166)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.run(DefaultBuildOperatio
+nRunner.java:47)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution.
+executeAction(TaskExecution.j
+ava:237)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution.
+executeActions(TaskExecution.
+java:220)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution.
+executeWithPreviousOutputFile
+s(TaskExecution.java:203)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution.
+execute(TaskExecution.java:17
+0)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep.execut
+eInternal(ExecuteStep.java:10
+5)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep.access
+$000(ExecuteStep.java:44)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep$1.call
+(ExecuteStep.java:59)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep$1.call
+(ExecuteStep.java:56)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$CallableBuildOperationWo
+rker.execute(DefaultBuildOper
+ationRunner.java:209)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$CallableBuildOperationWo
+rker.execute(DefaultBuildOper
+ationRunner.java:204)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:66)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner$2.execute(DefaultBuildOp
+erationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:166)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.execute(DefaultBuildOper
+ationRunner.java:59)
+	at org.gradle.internal.opera
+tions.DefaultBuildOperationRu
+nner.call(DefaultBuildOperati
+onRunner.java:53)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep.execut
+e(ExecuteStep.java:56)
+	at org.gradle.internal.execu
+tion.steps.ExecuteStep.execut
+e(ExecuteStep.java:44)
+	at org.gradle.internal.execu
+tion.steps.CancelExecutionSte
+p.execute(CancelExecutionStep
+.java:42)
+	at org.gradle.internal.execu
+tion.steps.TimeoutStep.execut
+eWithoutTimeout(TimeoutStep.j
+ava:75)
+	at org.gradle.internal.execu
+tion.steps.TimeoutStep.execut
+e(TimeoutStep.java:55)
+	at org.gradle.internal.execu
+tion.steps.PreCreateOutputPar
+entsStep.execute(PreCreateOut
+putParentsStep.java:50)
+	at org.gradle.internal.execu
+tion.steps.PreCreateOutputPar
+entsStep.execute(PreCreateOut
+putParentsStep.java:28)
+	at org.gradle.internal.execu
+tion.steps.RemovePreviousOutp
+utsStep.execute(RemovePreviou
+sOutputsStep.java:68)
+	at org.gradle.internal.execu
+tion.steps.RemovePreviousOutp
+utsStep.execute(RemovePreviou
+sOutputsStep.java:38)
+	at org.gradle.internal.execu
+tion.steps.BroadcastChangingO
+utputsStep.execute(BroadcastC
+hangingOutputsStep.java:61)
+	at org.gradle.internal.execu
+tion.steps.BroadcastChangingO
+utputsStep.execute(BroadcastC
+hangingOutputsStep.java:26)
+	at org.gradle.internal.execu
+tion.steps.CaptureOutputsAfte
+rExecutionStep.execute(Captur
+eOutputsAfterExecutionStep.ja
+va:69)
+	at org.gradle.internal.execu
+tion.steps.CaptureOutputsAfte
+rExecutionStep.execute(Captur
+eOutputsAfterExecutionStep.ja
+va:46)
+	at org.gradle.internal.execu
+tion.steps.ResolveInputChange
+sStep.execute(ResolveInputCha
+ngesStep.java:39)
+	at org.gradle.internal.execu
+tion.steps.ResolveInputChange
+sStep.execute(ResolveInputCha
+ngesStep.java:28)
+	at org.gradle.internal.execu
+tion.steps.BuildCacheStep.exe
+cuteWithoutCache(BuildCacheSt
+ep.java:189)
+	at org.gradle.internal.execu
+tion.steps.BuildCacheStep.lam
+bda$execute$1(BuildCacheStep.
+java:75)
+	at org.gradle.internal.Eithe
+r$Right.fold(Either.java:176)
+	at org.gradle.internal.execu
+tion.caching.CachingState.fol
+d(CachingState.java:62)
+	at org.gradle.internal.execu
+tion.steps.BuildCacheStep.exe
+cute(BuildCacheStep.java:73)
+	at org.gradle.internal.execu
+tion.steps.BuildCacheStep.exe
+cute(BuildCacheStep.java:48)
+	at org.gradle.internal.execu
+tion.steps.StoreExecutionStat
+eStep.execute(StoreExecutionS
+tateStep.java:46)
+	at org.gradle.internal.execu
+tion.steps.StoreExecutionStat
+eStep.execute(StoreExecutionS
+tateStep.java:35)
+	at org.gradle.internal.execu
+tion.steps.SkipUpToDateStep.e
+xecuteBecause(SkipUpToDateSte
+p.java:75)
+	at org.gradle.internal.execu
+tion.steps.SkipUpToDateStep.l
+ambda$execute$2(SkipUpToDateS
+tep.java:53)
+	at org.gradle.internal.execu
+tion.steps.SkipUpToDateStep.e
+xecute(SkipUpToDateStep.java:
+53)
+	at org.gradle.internal.execu
+tion.steps.SkipUpToDateStep.e
+xecute(SkipUpToDateStep.java:
+35)
+	at org.gradle.internal.execu
+tion.steps.legacy.MarkSnapsho
+ttingInputsFinishedStep.execu
+te(MarkSnapshottingInputsFini
+shedStep.java:37)
+	at org.gradle.internal.execu
+tion.steps.legacy.MarkSnapsho
+ttingInputsFinishedStep.execu
+te(MarkSnapshottingInputsFini
+shedStep.java:27)
+	at org.gradle.internal.execu
+tion.steps.ResolveIncremental
+CachingStateStep.executeDeleg
+ate(ResolveIncrementalCaching
+StateStep.java:49)
+	at org.gradle.internal.execu
+tion.steps.ResolveIncremental
+CachingStateStep.executeDeleg
+ate(ResolveIncrementalCaching
+StateStep.java:27)
+	at org.gradle.internal.execu
+tion.steps.AbstractResolveCac
+hingStateStep.execute(Abstrac
+tResolveCachingStateStep.java
+:71)
+	at org.gradle.internal.execu
+tion.steps.AbstractResolveCac
+hingStateStep.execute(Abstrac
+tResolveCachingStateStep.java
+:39)
+	at org.gradle.internal.execu
+tion.steps.ResolveChangesStep
+.execute(ResolveChangesStep.j
+ava:64)
+	at org.gradle.internal.execu
+tion.steps.ResolveChangesStep
+.execute(ResolveChangesStep.j
+ava:35)
+	at org.gradle.internal.execu
+tion.steps.ValidateStep.execu
+te(ValidateStep.java:62)
+	at org.gradle.internal.execu
+tion.steps.ValidateStep.execu
+te(ValidateStep.java:40)
+	at org.gradle.internal.execu
+tion.steps.AbstractCaptureSta
+teBeforeExecutionStep.execute
+(AbstractCaptureStateBeforeEx
+ecutionStep.java:76)
+	at org.gradle.internal.execu
+tion.steps.AbstractCaptureSta
+teBeforeExecutionStep.execute
+(AbstractCaptureStateBeforeEx
+ecutionStep.java:45)
+	at org.gradle.internal.execu
+tion.steps.AbstractSkipEmptyW
+orkStep.executeWithNonEmptySo
+urces(AbstractSkipEmptyWorkSt
+ep.java:136)
+	at org.gradle.internal.execu
+tion.steps.AbstractSkipEmptyW
+orkStep.execute(AbstractSkipE
+mptyWorkStep.java:61)
+	at org.gradle.internal.execu
+tion.steps.AbstractSkipEmptyW
+orkStep.execute(AbstractSkipE
+mptyWorkStep.java:38)
+	at org.gradle.internal.execu
+tion.steps.legacy.MarkSnapsho
+ttingInputsStartedStep.execut
+e(MarkSnapshottingInputsStart
+edStep.java:38)
+
+	at org.gradle.internal.execu
+tion.steps.LoadPreviousExecut
+ionStateStep.execute(LoadPrev
+iousExecutionStateStep.java:3
+6)
+	at org.gradle.internal.execu
+tion.steps.LoadPreviousExecut
+ionStateStep.execute(LoadPrev
+iousExecutionStateStep.java:2
+3)
+	at org.gradle.internal.execu
+tion.steps.HandleStaleOutputs
+Step.execute(HandleStaleOutpu
+tsStep.java:75)
+	at org.gradle.internal.execu
+tion.steps.HandleStaleOutputs
+Step.execute(HandleStaleOutpu
+tsStep.java:41)
+	at org.gradle.internal.execu
+tion.steps.AssignMutableWorks
+paceStep.lambda$execute$0(Ass
+ignMutableWorkspaceStep.java:
+35)
+	at org.gradle.api.internal.t
+asks.execution.TaskExecution$
+4.withWorkspace(TaskExecution
+.java:297)
+	at org.gradle.internal.execu
+tion.steps.AssignMutableWorks
+paceStep.execute(AssignMutabl
+eWorkspaceStep.java:31)
+	at org.gradle.internal.execu
+tion.steps.AssignMutableWorks
+paceStep.execute(AssignMutabl
+eWorkspaceStep.java:22)
+	at org.gradle.internal.execu
+tion.steps.ChoosePipelineStep
+.execute(ChoosePipelineStep.j
+ava:40)
+	at org.gradle.internal.execu
+tion.steps.ChoosePipelineStep
+.execute(ChoosePipelineStep.j
+ava:23)
+	at org.gradle.internal.execu
+tion.steps.ExecuteWorkBuildOp
+erationFiringStep.lambda$exec
+ute$2(ExecuteWorkBuildOperati
+onFiringStep.java:67)
+	at org.gradle.internal.execu
+tion.steps.ExecuteWorkBuildOp
+erationFiringStep.execute(Exe
+cuteWorkBuildOperationFiringS
+tep.java:67)
+	at org.gradle.internal.execu
+tion.steps.ExecuteWorkBuildOp
+erationFiringStep.execute(Exe
+cuteWorkBuildOperationFiringS
+tep.java:39)
+	at org.gradle.internal.execu
+tion.steps.IdentityCacheStep.
+execute(IdentityCacheStep.jav
+a:46)
+	at org.gradle.internal.execu
+tion.steps.IdentityCacheStep.
+execute(IdentityCacheStep.jav
+a:34)
+	at org.gradle.internal.execu
+tion.steps.IdentifyStep.execu
+te(IdentifyStep.java:44)
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+32 actionable tasks: 3 executed, 29 up-to-date
+Watched directory hierarchies: [C:\Users\mukht\Desktop\Android\Yung-Music-main]
+	at org.gradle.internal.execu
+tion.steps.IdentifyStep.execu
+te(IdentifyStep.java:31)
+	at org.gradle.internal.execu
+tion.impl.DefaultExecutionEng
+ine$1.execute(DefaultExecutio
+nEngine.java:64)
+	at org.gradle.api.internal.t
+asks.execution.ExecuteActions
+TaskExecuter.executeIfValid(E
+xecuteActionsTaskExecuter.jav
+a:132)
+	... 30 more
+Caused by: [color/ic_launcher
+_background] C:\Users\mukht\D
+esktop\Android\Yung-Music-mai
+n\app\src\main\res\values\col
+ors.xml	[color/ic_launcher_ba
+ckground] C:\Users\mukht\Desk
+top\Android\Yung-Music-main\a
+pp\src\main\res\values\ic_lau
+ncher_background.xml: Error: 
+Duplicate resources
+	at com.android.ide.common.re
+sources.DataSet.checkItems(Da
+taSet.java:512)
+	at com.android.ide.common.re
+sources.DataSet.loadFromFiles
+(DataSet.java:273)
+	at com.android.ide.common.re
+sources.DataSet.loadFromFiles
+(DataSet.java:243)
+	at com.android.build.gradle.
+tasks.MergeResources$doFullTa
+skAction$1$1$1.invoke(MergeRe
+sources.kt:281)
+	at com.android.build.gradle.
+internal.tasks.Blocks.recordS
+pan(Blocks.java:51)
+	at com.android.build.gradle.
+tasks.MergeResources.doFullTa
+skAction(MergeResources.kt:27
+5)
+	... 124 more
+
+
+BUILD FAILED in 9s

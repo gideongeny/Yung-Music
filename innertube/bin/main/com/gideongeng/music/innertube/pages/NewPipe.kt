@@ -61,14 +61,29 @@ class NewPipeDownloaderImpl(
 
         val response = client.newCall(requestBuilder.build()).execute()
 
-        if (response.code == 429) {
+        // OkHttp 3.x exposes code() as a method; OkHttp 4.x exposes it as a property
+        // (getCode() in JVM bytecode). Use reflection to stay compatible with
+        // whichever version is resolved at runtime.
+        val statusCode: Int = try {
+            okhttp3.Response::class.java.getMethod("code").invoke(response) as? Int ?: 200
+        } catch (e: Throwable) {
+            200
+        }
+
+        val statusMessage: String = try {
+            okhttp3.Response::class.java.getMethod("message").invoke(response) as? String ?: ""
+        } catch (e: Throwable) {
+            ""
+        }
+
+        if (statusCode == 429) {
             response.close()
             throw ReCaptchaException("reCaptcha Challenge requested", url)
         }
 
         val responseBodyToReturn = response.body?.string()
         val latestUrl = response.request.url.toString()
-        return Response(response.code, response.message, response.headers.toMultimap(), responseBodyToReturn, latestUrl)
+        return Response(statusCode, statusMessage, response.headers.toMultimap(), responseBodyToReturn, latestUrl)
     }
 }
 
@@ -160,7 +175,8 @@ object NewPipeExtractor {
             streamsList.mapNotNull {
                 (it.itagItem?.id ?: return@mapNotNull null) to it.content
             }
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
+            // Catches Error subclasses too (e.g. NoSuchMethodError from OkHttp version mismatch)
             e.printStackTrace()
             emptyList()
         }
