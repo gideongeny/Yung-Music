@@ -1,0 +1,29 @@
+{
+    "project_info": {
+        "project_number": "967118354119",
+        "project_id": "yungmusic-5f120",
+        "storage_bucket": "yungmusic-5f120.firebasestorage.app"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:967118354119:android:01db94cb8c162405c730e2",
+                "android_client_info": {
+                    "package_name": "com.gideongeny.YungMusic"
+                }
+            },
+            "oauth_client": [],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyC4JqjAV7yUlCpzgS7PPF6LPrsl2XD0VP0"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": []
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}
