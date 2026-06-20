@@ -1,0 +1,37 @@
+YungMusic — Your Premium Music Experience
+
+Discover, stream, and enjoy music with a beautifully crafted Material 3 interface.
+
+🎧 Core Features:
+• Stream millions of songs in high quality
+• Background playback — listen while multitasking
+• Synchronized lyrics with word-by-word timing
+• Download songs for offline listening
+• Sleep timer for bedtime listening
+
+🎨 Beautiful Design:
+• Material You dynamic color themes
+• Light, Dark, and AMOLED Black modes
+• Smooth animations and transitions
+
+📚 Library Management:
+• Create and manage local playlists
+• Import playlists from other services
+• Reorder your queue and playlists
+• Search across songs, albums, artists
+
+🎛️ Audio Tools:
+• Audio normalization
+• Skip silence
+• Custom tempo and pitch adjustment
+• Built-in equalizer support
+
+📺 Cast Support:
+• Google Cast to speakers and TVs
+
+🔒 Privacy Focused:
+• Control your listen and search history
+• No unnecessary permissions
+• Screenshot protection option
+
+YungMusic is crafted with care for music lovers who deserve a premium experience.
