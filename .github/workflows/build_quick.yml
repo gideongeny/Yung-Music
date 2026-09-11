@@ -2,15 +2,16 @@ name: Quick Test Build
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["**"]
-    paths-ignore:
-      - "README.md"
-      - "fastlane/**"
-      - "assets/**"
-      - ".github/**/*.md"
-      - ".github/FUNDING.yml"
-      - ".github/ISSUE_TEMPLATE/**"
+  # Push builds disabled — requires signing secrets to be configured in Settings → Secrets
+  # push:
+  #   branches: ["**"]
+  #   paths-ignore:
+  #     - "README.md"
+  #     - "fastlane/**"
+  #     - "assets/**"
+  #     - ".github/**/*.md"
+  #     - ".github/FUNDING.yml"
+  #     - ".github/ISSUE_TEMPLATE/**"
 
 permissions:
   contents: write
