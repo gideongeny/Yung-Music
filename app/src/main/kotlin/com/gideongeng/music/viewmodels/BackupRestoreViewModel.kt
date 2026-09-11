@@ -64,6 +64,20 @@ class BackupRestoreViewModel @Inject constructor(
         }
     }
 
+    fun restoreQueue(context: Context, uri: Uri) {
+        runCatching {
+            context.applicationContext.contentResolver.openInputStream(uri)?.use { inputStream ->
+                context.filesDir.resolve(PERSISTENT_QUEUE_FILE).outputStream().use { outputStream ->
+                    inputStream.copyTo(outputStream)
+                }
+            }
+            Toast.makeText(context, R.string.restore_success, Toast.LENGTH_SHORT).show()
+        }.onFailure {
+            reportException(it)
+            Toast.makeText(context, R.string.restore_failed, Toast.LENGTH_SHORT).show()
+        }
+    }
+
     fun restore(context: Context, uri: Uri) {
         runCatching {
             Timber.tag("RESTORE").i("Starting restore from URI: $uri")

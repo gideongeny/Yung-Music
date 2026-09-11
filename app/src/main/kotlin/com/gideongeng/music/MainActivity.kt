@@ -135,6 +135,7 @@ import com.gideongeng.music.constants.NavigationBarAnimationSpec
 import com.gideongeng.music.constants.NavigationBarHeight
 import com.gideongeng.music.constants.PauseSearchHistoryKey
 import com.gideongeng.music.constants.PureBlackKey
+import com.gideongeng.music.constants.OfflineModeKey
 import com.gideongeng.music.constants.SYSTEM_DEFAULT
 import com.gideongeng.music.constants.SlimNavBarHeight
 import com.gideongeng.music.constants.SlimNavBarKey
@@ -433,7 +434,25 @@ class MainActivity : ComponentActivity() {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val (previousTab, setPreviousTab) = rememberSaveable { mutableStateOf("home") }
 
-                val navigationItems = remember { Screens.MainScreens }
+                val (offlineMode) = rememberPreference(OfflineModeKey, defaultValue = false)
+                val navigationItems = remember(offlineMode) { 
+                    if (offlineMode) listOf(Screens.Library) else Screens.MainScreens 
+                }
+                
+                LaunchedEffect(offlineMode) {
+                    if (offlineMode) {
+                        val currentRoute = navController.currentDestination?.route
+                        if (currentRoute == Screens.Home.route || currentRoute == Screens.Search.route) {
+                            navController.navigate(Screens.Library.route) {
+                                popUpTo(navController.graph.startDestinationId) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    }
+                }
                 val (slimNav) = rememberPreference(SlimNavBarKey, defaultValue = false)
                 val (useNewMiniPlayerDesign) = rememberPreference(UseNewMiniPlayerDesignKey, defaultValue = true)
                 val defaultOpenTab = remember {

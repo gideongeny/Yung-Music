@@ -38,9 +38,23 @@ class SleepTimer(
             triggerTime = System.currentTimeMillis() + minute.minutes.inWholeMilliseconds
             sleepTimerJob =
                 scope.launch {
-                    delay(minute.minutes)
-                    player.pause()
-                    triggerTime = -1L
+                    val originalVolume = player.volume
+                    try {
+                        delay(minute.minutes)
+                        
+                        // Fade out over 2 seconds
+                        val steps = 20
+                        val delayMs = 2000L / steps
+                        for (i in steps downTo 1) {
+                            player.volume = originalVolume * (i.toFloat() / steps)
+                            delay(delayMs)
+                        }
+                        
+                        player.pause()
+                        triggerTime = -1L
+                    } finally {
+                        player.volume = originalVolume
+                    }
                 }
         }
     }

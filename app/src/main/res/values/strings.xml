@@ -87,7 +87,7 @@
     <string name="reset">Reset</string>
 
     <!-- Menu -->
-    <string name="details">Details</string>
+    <string name="details">Credits &amp; Info</string>
     <string name="edit">Edit</string>
     <string name="start_radio">Start radio</string>
     <string name="play">Play</string>
@@ -332,6 +332,7 @@
     <string name="backup_create_success">Backup created successfully</string>
     <string name="backup_create_failed">Couldn\'t create backup</string>
     <string name="restore_failed">Failed to restore backup</string>
+    <string name="restore_success">Restored successfully</string>
 
     <string name="discord_integration">Discord Integration</string>
     <string name="dismiss">Dismiss</string>
@@ -345,6 +346,21 @@
     <string name="new_version_available">New version available</string>
     <string name="translation_models">Translation Models</string>
     <string name="clear_translation_models">Clear translation models</string>
+    
+    <!-- Smart Skip -->
+    <string name="smart_skip_title">Smart Skip</string>
+    <string name="smart_skip_desc">Automatically skip non-music segments during playback</string>
+    
+    <!-- Crossfade -->
+    <string name="crossfade_title">Crossfade</string>
+    <string name="crossfade_desc">Smooth DJ-style transitions between songs</string>
+    <string name="crossfade_duration">Crossfade duration</string>
+    <string name="crossfade_seconds">%d seconds</string>
+    
+    <!-- Community Rating -->
+    <string name="community_rating_title">Community Rating</string>
+    <string name="community_rating_desc">Show community-sourced engagement metrics for tracks</string>
+
     <string name="ad_unit_id_banner">ca-app-pub-1281448884303417/5498561928</string>
     <string name="ad_unit_id_interstitial">ca-app-pub-1281448884303417/3383534478</string>
     <string name="ad_unit_id_rewarded">ca-app-pub-1281448884303417/2070452808</string>

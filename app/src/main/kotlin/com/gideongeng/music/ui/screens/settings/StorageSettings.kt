@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -51,6 +53,8 @@ import com.gideongeng.music.LocalPlayerConnection
 import com.gideongeng.music.R
 import com.gideongeng.music.constants.MaxImageCacheSizeKey
 import com.gideongeng.music.constants.MaxSongCacheSizeKey
+import com.gideongeng.music.constants.OfflineModeKey
+import com.gideongeng.music.constants.SmartCacheKey
 import com.gideongeng.music.extensions.tryOrNull
 import com.gideongeng.music.ui.component.ActionPromptDialog
 import com.gideongeng.music.ui.component.IconButton
@@ -64,6 +68,13 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
+import androidx.work.WorkManager
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.NetworkType
+import androidx.work.Constraints
+import com.gideongeng.music.workers.SmartCacheWorker
+import java.util.concurrent.TimeUnit
 
 @OptIn(ExperimentalCoilApi::class, ExperimentalMaterial3Api::class, DelicateCoilApi::class)
 @Composable
@@ -87,6 +98,9 @@ fun StorageSettings(
         key = MaxSongCacheSizeKey,
         defaultValue = 1024
     )
+
+    val (offlineMode, onOfflineModeChange) = rememberPreference(OfflineModeKey, defaultValue = false)
+    val (smartCache, onSmartCacheChange) = rememberPreference(SmartCacheKey, defaultValue = false)
 
     var clearDownloads by remember { mutableStateOf(false) }
     var clearCacheDialog by remember { mutableStateOf(false) }
@@ -279,6 +293,95 @@ fun StorageSettings(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 16.dp),
         ) {
+            // ── Offline Mode ──────────────────────────────────────────────────────
+            Material3SettingsGroup(
+                title = stringResource(R.string.offline_mode),
+                items = listOf(
+                    Material3SettingsItem(
+                        icon = painterResource(R.drawable.offline),
+                        title = { Text(stringResource(R.string.offline_mode)) },
+                        description = { Text(stringResource(R.string.offline_mode_desc)) },
+                        trailingContent = {
+                            androidx.compose.material3.Switch(
+                                checked = offlineMode,
+                                onCheckedChange = onOfflineModeChange,
+                                thumbContent = {
+                                    Icon(
+                                        painter = painterResource(
+                                            id = if (offlineMode) R.drawable.check else R.drawable.close
+                                        ),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(androidx.compose.material3.SwitchDefaults.IconSize)
+                                    )
+                                }
+                            )
+                        },
+                        onClick = { onOfflineModeChange(!offlineMode) }
+                    ),
+                    Material3SettingsItem(
+                        icon = painterResource(R.drawable.download),
+                        title = { Text(stringResource(R.string.smart_cache)) },
+                        description = { Text(stringResource(R.string.smart_cache_desc)) },
+                        trailingContent = {
+                            androidx.compose.material3.Switch(
+                                checked = smartCache,
+                                onCheckedChange = { isChecked ->
+                                    onSmartCacheChange(isChecked)
+                                    val workManager = WorkManager.getInstance(context)
+                                    if (isChecked) {
+                                        val constraints = Constraints.Builder()
+                                            .setRequiredNetworkType(NetworkType.UNMETERED)
+                                            .build()
+                                        val request = PeriodicWorkRequestBuilder<SmartCacheWorker>(12, TimeUnit.HOURS)
+                                            .setConstraints(constraints)
+                                            .build()
+                                        workManager.enqueueUniquePeriodicWork(
+                                            "smart_cache_worker",
+                                            ExistingPeriodicWorkPolicy.UPDATE,
+                                            request
+                                        )
+                                    } else {
+                                        workManager.cancelUniqueWork("smart_cache_worker")
+                                    }
+                                },
+                                thumbContent = {
+                                    Icon(
+                                        painter = painterResource(
+                                            id = if (smartCache) R.drawable.check else R.drawable.close
+                                        ),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(androidx.compose.material3.SwitchDefaults.IconSize)
+                                    )
+                                }
+                            )
+                        },
+                        onClick = {
+                            val isChecked = !smartCache
+                            onSmartCacheChange(isChecked)
+                            val workManager = WorkManager.getInstance(context)
+                            if (isChecked) {
+                                val constraints = Constraints.Builder()
+                                    .setRequiredNetworkType(NetworkType.UNMETERED)
+                                    .build()
+                                val request = PeriodicWorkRequestBuilder<SmartCacheWorker>(12, TimeUnit.HOURS)
+                                    .setConstraints(constraints)
+                                    .build()
+                                workManager.enqueueUniquePeriodicWork(
+                                    "smart_cache_worker",
+                                    ExistingPeriodicWorkPolicy.UPDATE,
+                                    request
+                                )
+                            } else {
+                                workManager.cancelUniqueWork("smart_cache_worker")
+                            }
+                        }
+                    )
+                )
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // ── Downloads ─────────────────────────────────────────────────────────
             Material3SettingsGroup(
                 title = stringResource(R.string.storage),
                 items = listOf(

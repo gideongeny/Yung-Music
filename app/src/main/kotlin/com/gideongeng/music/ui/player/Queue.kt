@@ -1260,7 +1260,7 @@ private fun PlayerQueueButton(
                 iconButtonColor
             } else {
                 when (playerBackground) {
-                    PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT ->
+                    PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT, PlayerBackgroundStyle.GLASS ->
                         Color.White
                     PlayerBackgroundStyle.DEFAULT ->
                         MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)

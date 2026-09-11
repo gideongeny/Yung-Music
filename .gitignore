@@ -21,4 +21,19 @@ dist/
 *.aab
 keystore/
 *.keystore
-!keystore/release.keystore
+*.jks
+keystore.properties
+
+# Desktop build artifacts - never commit these
+desktop/build/
+desktop/favorites.json
+desktop/history.json
+desktop/hs_err_pid*.log
+desktop/replay_pid*.log
+
+# Root level crash logs
+hs_err_pid*.log
+replay_pid*.log
+test_jfx.kt
+vlc-help.txt
+.kotlin/

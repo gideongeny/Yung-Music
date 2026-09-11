@@ -570,4 +570,14 @@
     <string name="cd_dark_mode">Dark mode</string>
     <string name="cd_system_mode">System mode</string>
     <string name="cd_palette_item">%1$s palette</string>
+
+    <!-- Offline Mode -->
+    <string name="offline_mode">Offline Mode</string>
+    <string name="offline_mode_desc">Block all network access. Only downloaded songs will play.</string>
+
+    <!-- Smart Cache -->
+    <string name="smart_cache">Smart Cache Pre-warming</string>
+    <string name="smart_cache_desc">Automatically download liked songs when on Wi-Fi.</string>
+    <string name="collaborative_playlist">Collaborative Playlist</string>
+    <string name="collaborative_playlist_desc">Share this playlist with your Listen Together room in real-time.</string>
 </resources>

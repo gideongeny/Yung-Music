@@ -10,19 +10,31 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
+import com.gideongeng.music.constants.OfflineModeKey
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 
 /**
  * Simple NetworkConnectivityObserver based on OuterTune's implementation
- * Provides network connectivity monitoring for auto-play functionality
+ * Provides network connectivity monitoring for auto-play functionality.
+ * When Offline Mode is enabled via [OfflineModeKey], all connectivity signals
+ * are forced to false regardless of the actual network state.
  */
-class NetworkConnectivityObserver(context: Context) {
+class NetworkConnectivityObserver(private val context: Context) {
     private val connectivityManager =
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     private val _networkStatus = Channel<Boolean>(Channel.CONFLATED)
-    val networkStatus = _networkStatus.receiveAsFlow()
+
+    /** Emits true when connected AND offline mode is disabled. */
+    val networkStatus = combine(
+        _networkStatus.receiveAsFlow(),
+        context.dataStore.data.map { prefs -> prefs[OfflineModeKey] ?: false }
+    ) { isConnected, offlineMode ->
+        if (offlineMode) false else isConnected
+    }
 
     private val networkCallback = object : ConnectivityManager.NetworkCallback() {
         override fun onAvailable(network: Network) {
@@ -39,41 +51,47 @@ class NetworkConnectivityObserver(context: Context) {
             .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
             .addCapability(NetworkCapabilities.NET_CAPABILITY_NOT_RESTRICTED)
             .build()
-        
+
         try {
             connectivityManager.registerNetworkCallback(request, networkCallback)
         } catch (e: Exception) {
             // Fallback: assume connected if registration fails
             _networkStatus.trySend(true)
         }
-        
+
         // Send initial state
-        val isInitiallyConnected = isCurrentlyConnected()
-        _networkStatus.trySend(isInitiallyConnected)
+        _networkStatus.trySend(checkPhysicalConnection())
     }
 
     fun unregister() {
         connectivityManager.unregisterNetworkCallback(networkCallback)
     }
-    
+
     /**
-     * Check current connectivity state synchronously
+     * Synchronously returns the effective connectivity state.
+     * Returns false if Offline Mode is enabled OR if physically disconnected.
      */
     fun isCurrentlyConnected(): Boolean {
+        if (context.dataStore.get(OfflineModeKey, false)) return false
+        return checkPhysicalConnection()
+    }
+
+    /** Checks the actual hardware network state without consulting Offline Mode. */
+    private fun checkPhysicalConnection(): Boolean {
         return try {
             val activeNetwork = connectivityManager.activeNetwork
             val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
-            
-            // Check if we have internet capability
-            val hasInternet = networkCapabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
-            
-            // For API 23+, also check if connection is validated
+
+            val hasInternet = networkCapabilities
+                ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+
             val isValidated = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-                networkCapabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) == true
+                networkCapabilities
+                    ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) == true
             } else {
-                true // For older versions, assume validated if we have internet capability
+                true
             }
-            
+
             hasInternet && isValidated
         } catch (e: Exception) {
             false

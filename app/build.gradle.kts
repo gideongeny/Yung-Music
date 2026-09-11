@@ -34,8 +34,8 @@ android {
         applicationId = "com.gideongeny.YungMusic"
         minSdk = 26
         targetSdk = 36
-        versionCode = 145
-        versionName = "13.0.5"
+        versionCode = 148
+        versionName = "13.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -190,9 +190,9 @@ android {
         jniLibs {
             useLegacyPackaging = false
             keepDebugSymbols += listOf(
-                "**/libandroidx.graphics.path.so",
-                "**/libdatastore_shared_counter.so"
+                "**/libandroidx.graphics.path.so"
             )
+            excludes += "**/libdatastore_shared_counter.so"
         }
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -224,7 +224,10 @@ dependencies {
     implementation(libs.concurrent.futures)
 
     implementation(libs.activity)
+    implementation(libs.work.runtime)
     implementation(libs.hilt.navigation)
+    implementation(libs.hilt.work)
+    ksp(libs.hilt.work.compiler)
     implementation(libs.datastore)
 
     implementation(libs.compose.runtime)

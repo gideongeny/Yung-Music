@@ -166,6 +166,10 @@ fun AppearanceSettings(
         UseNewPlayerDesignKey,
         defaultValue = true
     )
+    val (enableWaveformVisualizer, onEnableWaveformVisualizerChange) = rememberPreference(
+        com.gideongeng.music.constants.EnableWaveformVisualizerKey,
+        defaultValue = true
+    )
     val (useNewMiniPlayerDesign, onUseNewMiniPlayerDesignChange) = rememberPreference(
         UseNewMiniPlayerDesignKey,
         defaultValue = true
@@ -513,6 +517,7 @@ fun AppearanceSettings(
                     PlayerBackgroundStyle.DEFAULT -> stringResource(R.string.follow_theme)
                     PlayerBackgroundStyle.GRADIENT -> stringResource(R.string.gradient)
                     PlayerBackgroundStyle.BLUR -> stringResource(R.string.player_background_blur)
+                    PlayerBackgroundStyle.GLASS -> "Glass"
                 }
             }
         )
@@ -938,6 +943,26 @@ fun AppearanceSettings(
                     onClick = { onUseNewPlayerDesignChange(!useNewPlayerDesign) }
                 ),
                 Material3SettingsItem(
+                    icon = painterResource(R.drawable.music_note),
+                    title = { Text("Audio Visualizer") },
+                    trailingContent = {
+                        Switch(
+                            checked = enableWaveformVisualizer,
+                            onCheckedChange = onEnableWaveformVisualizerChange,
+                            thumbContent = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = if (enableWaveformVisualizer) R.drawable.check else R.drawable.close
+                                    ),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(SwitchDefaults.IconSize)
+                                )
+                            }
+                        )
+                    },
+                    onClick = { onEnableWaveformVisualizerChange(!enableWaveformVisualizer) }
+                ),
+                Material3SettingsItem(
                     icon = painterResource(R.drawable.gradient),
                     title = { Text(stringResource(R.string.player_background_style)) },
                     description = {
@@ -946,7 +971,8 @@ fun AppearanceSettings(
                                 PlayerBackgroundStyle.DEFAULT -> stringResource(R.string.follow_theme)
                                 PlayerBackgroundStyle.GRADIENT -> stringResource(R.string.gradient)
                                 PlayerBackgroundStyle.BLUR -> stringResource(R.string.player_background_blur)
-                            }
+                                PlayerBackgroundStyle.GLASS -> "Glass"
+                            },
                         )
                     },
                     onClick = { showPlayerBackgroundDialog = true }

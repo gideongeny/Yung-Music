@@ -57,6 +57,10 @@ import com.gideongeng.music.constants.HistoryDuration
 import com.gideongeng.music.constants.PauseOnMute
 import com.gideongeng.music.constants.KeepScreenOn
 import com.gideongeng.music.constants.SeekExtraSeconds
+import com.gideongeng.music.constants.EnableSmartSkipKey
+import com.gideongeng.music.constants.EnableCrossfadeKey
+import com.gideongeng.music.constants.CrossfadeDurationKey
+import com.gideongeng.music.constants.EnableCommunityRatingKey
 import com.gideongeng.music.ui.component.EnumDialog
 import com.gideongeng.music.ui.component.IconButton
 import com.gideongeng.music.ui.component.Material3SettingsGroup
@@ -155,6 +159,22 @@ fun PlayerSettings(
     val (historyDuration, onHistoryDurationChange) = rememberPreference(
         HistoryDuration,
         defaultValue = 30f
+    )
+    val (enableSmartSkip, onEnableSmartSkipChange) = rememberPreference(
+        EnableSmartSkipKey,
+        defaultValue = false
+    )
+    val (enableCrossfade, onEnableCrossfadeChange) = rememberPreference(
+        EnableCrossfadeKey,
+        defaultValue = false
+    )
+    val (crossfadeDuration, onCrossfadeDurationChange) = rememberPreference(
+        CrossfadeDurationKey,
+        defaultValue = 3
+    )
+    val (enableCommunityRating, onEnableCommunityRatingChange) = rememberPreference(
+        EnableCommunityRatingKey,
+        defaultValue = false
     )
 
     var showAudioQualityDialog by remember {
@@ -358,6 +378,86 @@ fun PlayerSettings(
                         )
                     },
                     onClick = { onSeekExtraSeconds(!seekExtraSeconds) }
+                ))
+                add(Material3SettingsItem(
+                    icon = painterResource(R.drawable.fast_forward),
+                    title = { Text(stringResource(R.string.smart_skip_title)) },
+                    description = { Text(stringResource(R.string.smart_skip_desc)) },
+                    trailingContent = {
+                        Switch(
+                            checked = enableSmartSkip,
+                            onCheckedChange = onEnableSmartSkipChange,
+                            thumbContent = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = if (enableSmartSkip) R.drawable.check else R.drawable.close
+                                    ),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(SwitchDefaults.IconSize)
+                                )
+                            }
+                        )
+                    },
+                    onClick = { onEnableSmartSkipChange(!enableSmartSkip) }
+                ))
+                add(Material3SettingsItem(
+                    icon = painterResource(R.drawable.graphic_eq), // Reuse graphic_eq for crossfade
+                    title = { Text(stringResource(R.string.crossfade_title)) },
+                    description = { Text(stringResource(R.string.crossfade_desc)) },
+                    trailingContent = {
+                        Switch(
+                            checked = enableCrossfade,
+                            onCheckedChange = onEnableCrossfadeChange,
+                            thumbContent = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = if (enableCrossfade) R.drawable.check else R.drawable.close
+                                    ),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(SwitchDefaults.IconSize)
+                                )
+                            }
+                        )
+                    },
+                    onClick = { onEnableCrossfadeChange(!enableCrossfade) }
+                ))
+                if (enableCrossfade) {
+                    add(Material3SettingsItem(
+                        icon = painterResource(R.drawable.history),
+                        title = { Text(stringResource(R.string.crossfade_duration)) },
+                        description = {
+                            Column {
+                                Text(stringResource(R.string.crossfade_seconds, crossfadeDuration))
+                                Slider(
+                                    value = crossfadeDuration.toFloat(),
+                                    onValueChange = { onCrossfadeDurationChange(it.roundToInt()) },
+                                    valueRange = 1f..10f,
+                                    steps = 8
+                                )
+                            }
+                        }
+                    ))
+                }
+                add(Material3SettingsItem(
+                    icon = painterResource(R.drawable.favorite), // Reuse like icon for community rating
+                    title = { Text(stringResource(R.string.community_rating_title)) },
+                    description = { Text(stringResource(R.string.community_rating_desc)) },
+                    trailingContent = {
+                        Switch(
+                            checked = enableCommunityRating,
+                            onCheckedChange = onEnableCommunityRatingChange,
+                            thumbContent = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = if (enableCommunityRating) R.drawable.check else R.drawable.close
+                                    ),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(SwitchDefaults.IconSize)
+                                )
+                            }
+                        )
+                    },
+                    onClick = { onEnableCommunityRatingChange(!enableCommunityRating) }
                 ))
             }
         )

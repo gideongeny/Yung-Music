@@ -16,9 +16,14 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -55,6 +60,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ContainedLoadingIndicator
@@ -144,6 +151,7 @@ import com.gideongeng.music.constants.SliderStyleKey
 import com.gideongeng.music.constants.SquigglySliderKey
 import com.gideongeng.music.constants.ThumbnailCornerRadius
 import com.gideongeng.music.constants.UseNewPlayerDesignKey
+import com.gideongeng.music.constants.EnableCommunityRatingKey
 import com.gideongeng.music.db.entities.LyricsEntity
 import com.gideongeng.music.extensions.togglePlayPause
 import com.gideongeng.music.extensions.toggleRepeatMode
@@ -164,6 +172,8 @@ import com.gideongeng.music.ui.theme.PlayerSliderColors
 import com.gideongeng.music.ui.utils.ShowMediaInfo
 import com.gideongeng.music.ui.utils.ShowOffsetDialog
 import com.gideongeng.music.utils.makeTimeString
+import com.gideongeng.music.utils.CommunityRatingManager
+import com.gideongeng.music.utils.CommunityRating
 import com.gideongeng.music.utils.rememberEnumPreference
 import com.gideongeng.music.utils.rememberPreference
 import dagger.hilt.android.EntryPointAccessors
@@ -175,6 +185,7 @@ import kotlinx.coroutines.withContext
 import me.saket.squiggles.SquigglySlider
 import kotlin.math.max
 import kotlin.math.roundToInt
+import com.gideongeng.music.ui.component.WaveformVisualizer
 import com.gideongeng.music.ui.component.Icon as MIcon
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -214,7 +225,7 @@ fun BottomSheetPlayer(
 
     val shouldUseDarkButtonColors = remember(playerBackground, useDarkTheme) {
         when (playerBackground) {
-            PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT -> true
+            PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT, PlayerBackgroundStyle.GLASS -> true
             PlayerBackgroundStyle.DEFAULT -> useDarkTheme
         }
     }
@@ -229,7 +240,7 @@ fun BottomSheetPlayer(
             val insetsController = WindowCompat.getInsetsController(window, window.decorView)
             
             when (playerBackground) {
-                PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT -> {
+                PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT, PlayerBackgroundStyle.GLASS -> {
                     insetsController.isAppearanceLightStatusBars = false
                 }
                 PlayerBackgroundStyle.DEFAULT -> {
@@ -264,6 +275,17 @@ fun BottomSheetPlayer(
 
     val playbackState by playerConnection.playbackState.collectAsState()
     val mediaMetadata by playerConnection.mediaMetadata.collectAsState()
+    
+    val enableCommunityRating by rememberPreference(EnableCommunityRatingKey, false)
+    var communityRating by remember { mutableStateOf<CommunityRating?>(null) }
+    
+    LaunchedEffect(mediaMetadata?.id, enableCommunityRating) {
+        if (enableCommunityRating && mediaMetadata?.id != null) {
+            communityRating = CommunityRatingManager.getRating(mediaMetadata!!.id)
+        } else {
+            communityRating = null
+        }
+    }
     val currentSong by playerConnection.currentSong.collectAsState(initial = null)
     val automix by playerConnection.service.automixItems.collectAsState()
     val repeatMode by playerConnection.repeatMode.collectAsState()
@@ -379,6 +401,7 @@ fun BottomSheetPlayer(
             PlayerBackgroundStyle.DEFAULT -> MaterialTheme.colorScheme.onBackground
             PlayerBackgroundStyle.BLUR -> Color.White
             PlayerBackgroundStyle.GRADIENT -> Color.White
+            PlayerBackgroundStyle.GLASS -> Color.White
         },
         label = "TextBackgroundColor"
     )
@@ -388,13 +411,15 @@ fun BottomSheetPlayer(
             PlayerBackgroundStyle.DEFAULT -> MaterialTheme.colorScheme.surface
             PlayerBackgroundStyle.BLUR -> Color.Black
             PlayerBackgroundStyle.GRADIENT -> Color.Black
+            PlayerBackgroundStyle.GLASS -> Color.Black
         },
         label = "icBackgroundColor"
     )
 
     val (textButtonColor, iconButtonColor) = when {
         playerBackground == PlayerBackgroundStyle.BLUR || 
-        playerBackground == PlayerBackgroundStyle.GRADIENT -> {
+        playerBackground == PlayerBackgroundStyle.GRADIENT ||
+        playerBackground == PlayerBackgroundStyle.GLASS -> {
             when (playerButtonsStyle) {
                 PlayerButtonsStyle.DEFAULT -> Pair(Color.White, Color.Black)
                 PlayerButtonsStyle.PRIMARY -> Pair(
@@ -427,7 +452,8 @@ fun BottomSheetPlayer(
     // Separate colors for Previous/Next buttons in PRIMARY/TERTIARY modes
     val (sideButtonContainerColor, sideButtonContentColor) = when {
         playerBackground == PlayerBackgroundStyle.BLUR || 
-        playerBackground == PlayerBackgroundStyle.GRADIENT -> {
+        playerBackground == PlayerBackgroundStyle.GRADIENT ||
+        playerBackground == PlayerBackgroundStyle.GLASS -> {
             when (playerButtonsStyle) {
                 PlayerButtonsStyle.DEFAULT -> Pair(
                     Color.White.copy(alpha = 0.2f), 
@@ -471,6 +497,11 @@ fun BottomSheetPlayer(
         ) {
             playerConnection.service.sleepTimer.isActive
         }
+    
+    val isCrossfading by remember {
+        try { playerConnection.service.isCrossfading }
+        catch (e: Exception) { kotlinx.coroutines.flow.MutableStateFlow(false) }
+    }.collectAsState()
 
     var sleepTimerTimeLeft by remember {
         mutableLongStateOf(0L)
@@ -614,7 +645,7 @@ fun BottomSheetPlayer(
     )
 
     val bottomSheetBackgroundColor = when (playerBackground) {
-        PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT ->
+        PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT, PlayerBackgroundStyle.GLASS ->
             MaterialTheme.colorScheme.surfaceContainer
         else ->
             if (useBlackBackground) Color.Black
@@ -622,6 +653,18 @@ fun BottomSheetPlayer(
     }
 
     val backgroundAlpha = state.progress.coerceIn(0f, 1f)
+
+    // Animated gradient morphing transition (for GRADIENT mode — slow living colour shift)
+    val infiniteTransition = rememberInfiniteTransition(label = "gradientMorph")
+    val gradientShift by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween<Float>(durationMillis = 6000, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "gradientShift"
+    )
 
     BottomSheet(
         state = state,
@@ -664,6 +707,69 @@ fun BottomSheetPlayer(
                             }
                         }
                     }
+                    PlayerBackgroundStyle.GLASS -> {
+                        // Glass: full-bleed blurred album art + frosted glass card overlay
+                        AnimatedContent(
+                            targetState = mediaMetadata?.thumbnailUrl,
+                            transitionSpec = {
+                                fadeIn(tween(800)).togetherWith(fadeOut(tween(800)))
+                            },
+                            label = "glassBackground"
+                        ) { thumbnailUrl ->
+                            if (thumbnailUrl != null) {
+                                Box(modifier = Modifier.graphicsLayer { alpha = backgroundAlpha }) {
+                                    // Blurred album art base layer
+                                    AsyncImage(
+                                        model = ImageRequest.Builder(context)
+                                            .data(thumbnailUrl)
+                                            .size(100, 100)
+                                            .allowHardware(false)
+                                            .build(),
+                                        contentDescription = null,
+                                        contentScale = ContentScale.Crop,
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .blur(120.dp)
+                                    )
+                                    // Dark scrim
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .background(Color.Black.copy(alpha = 0.4f))
+                                    )
+                                    // Glassmorphism frosted overlay
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .background(
+                                                Brush.verticalGradient(
+                                                    colors = listOf(
+                                                        Color.White.copy(alpha = 0.10f),
+                                                        Color.White.copy(alpha = 0.04f),
+                                                        Color.Transparent
+                                                    )
+                                                )
+                                            )
+                                    )
+                                    // Hairline top border for glass effect
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .background(
+                                                Brush.verticalGradient(
+                                                    colors = listOf(
+                                                        Color.White.copy(alpha = 0.25f),
+                                                        Color.Transparent
+                                                    ),
+                                                    startY = 0f,
+                                                    endY = 3f
+                                                )
+                                            )
+                                    )
+                                }
+                            }
+                        }
+                    }
                     PlayerBackgroundStyle.GRADIENT -> {
                         AnimatedContent(
                             targetState = gradientColors,
@@ -673,25 +779,43 @@ fun BottomSheetPlayer(
                             label = "gradientBackground"
                         ) { colors ->
                             if (colors.isNotEmpty()) {
-                                val gradientColorStops = if (colors.size >= 3) {
-                                    arrayOf(
-                                        0.0f to colors[0],
-                                        0.5f to colors[1],
-                                        1.0f to colors[2]
-                                    )
-                                } else {
-                                    arrayOf(
-                                        0.0f to colors[0],
-                                        0.6f to colors[0].copy(alpha = 0.7f),
-                                        1.0f to Color.Black
-                                    )
-                                }
                                 Box(
                                     Modifier
                                         .fillMaxSize()
-                                        .alpha(backgroundAlpha)
-                                        .background(Brush.verticalGradient(colorStops = gradientColorStops))
-                                        .background(Color.Black.copy(alpha = 0.2f))
+                                        .graphicsLayer { alpha = backgroundAlpha }
+                                        .drawBehind {
+                                            // Animate between slightly shifted colour variants for a living gradient
+                                            val c0 = colors[0]
+                                            val c1 = if (colors.size >= 2) colors[1] else Color.Black
+                                            val shift = gradientShift // Read state inside draw scope
+                                            val morphedC0 = androidx.compose.ui.graphics.lerp(c0, c1, shift * 0.18f)
+                                            val morphedC1 = androidx.compose.ui.graphics.lerp(c1, c0, shift * 0.18f)
+
+                                            val gradientColorStops = if (colors.size >= 3) {
+                                                arrayOf(
+                                                    0.0f to morphedC0,
+                                                    0.5f to morphedC1,
+                                                    1.0f to colors[2]
+                                                )
+                                            } else {
+                                                arrayOf(
+                                                    0.0f to morphedC0,
+                                                    0.6f to morphedC0.copy(alpha = 0.7f),
+                                                    1.0f to Color.Black
+                                                )
+                                            }
+                                            
+                                            drawRect(
+                                                brush = Brush.verticalGradient(colorStops = gradientColorStops),
+                                                size = size
+                                            )
+                                            
+                                            // Scrim
+                                            drawRect(
+                                                color = Color.Black.copy(alpha = 0.2f),
+                                                size = size
+                                            )
+                                        }
                                 )
                             }
                         }
@@ -889,6 +1013,53 @@ fun BottomSheetPlayer(
                                                     .show()
                                             }
                                         )
+                                )
+                            }
+                        }
+                    }
+                    
+                    AnimatedVisibility(visible = communityRating != null) {
+                        communityRating?.let { rating ->
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier.padding(top = 4.dp, end = 12.dp)
+                            ) {
+                                Icon(
+                                    painter = painterResource(R.drawable.favorite),
+                                    contentDescription = null,
+                                    tint = TextBackgroundColor.copy(alpha = 0.7f),
+                                    modifier = Modifier.size(12.dp)
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = rating.formattedLikes(),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = TextBackgroundColor.copy(alpha = 0.7f)
+                                )
+                                Spacer(modifier = Modifier.width(12.dp))
+                                Icon(
+                                    painter = painterResource(R.drawable.arrow_downward),
+                                    contentDescription = null,
+                                    tint = TextBackgroundColor.copy(alpha = 0.7f),
+                                    modifier = Modifier.size(12.dp)
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = rating.formattedDislikes(),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = TextBackgroundColor.copy(alpha = 0.7f)
+                                )
+                                Spacer(modifier = Modifier.width(12.dp))
+                                Text(
+                                    text = "•",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = TextBackgroundColor.copy(alpha = 0.7f)
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = "${rating.likePercentage}% Like Ratio",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = TextBackgroundColor.copy(alpha = 0.7f)
                                 )
                             }
                         }
@@ -1255,6 +1426,35 @@ fun BottomSheetPlayer(
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
+                
+                androidx.compose.animation.AnimatedVisibility(
+                    visible = isCrossfading,
+                    enter = androidx.compose.animation.fadeIn(),
+                    exit = androidx.compose.animation.fadeOut()
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .background(
+                                color = TextBackgroundColor.copy(alpha = 0.1f),
+                                shape = RoundedCornerShape(12.dp)
+                            )
+                            .padding(horizontal = 8.dp, vertical = 2.dp)
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.graphic_eq),
+                            contentDescription = "Crossfading",
+                            tint = TextBackgroundColor.copy(alpha = 0.7f),
+                            modifier = Modifier.size(12.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "Crossfading",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextBackgroundColor.copy(alpha = 0.7f)
+                        )
+                    }
+                }
 
                 Text(
                     text = if (duration != C.TIME_UNSET) makeTimeString(duration) else "",
@@ -1262,6 +1462,28 @@ fun BottomSheetPlayer(
                     color = TextBackgroundColor,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
+                )
+            }
+
+            // Waveform Visualizer — beat-reactive bars using ExoPlayer audio session (no RECORD_AUDIO permission)
+            val enableWaveformVisualizer by rememberPreference(
+                com.gideongeng.music.constants.EnableWaveformVisualizerKey,
+                defaultValue = true
+            )
+            if (enableWaveformVisualizer) {
+                val audioSessionId = remember(playerConnection.player) {
+                    try { playerConnection.player.audioSessionId } catch (e: Exception) { 0 }
+                }
+                WaveformVisualizer(
+                    audioSessionId = audioSessionId,
+                    accentColor = if (playerBackground == PlayerBackgroundStyle.DEFAULT)
+                        MaterialTheme.colorScheme.primary
+                    else
+                        Color.White.copy(alpha = 0.85f),
+                    isPlaying = effectiveIsPlaying,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = PlayerHorizontalPadding, vertical = 4.dp)
                 )
             }
 

@@ -83,6 +83,12 @@ fun BackupAndRestore(
                 viewModel.restore(context, uri)
             }
         }
+    val restoreQueueLauncher =
+        rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+            if (uri != null) {
+                viewModel.restoreQueue(context, uri)
+            }
+        }
     val importPlaylistFromCsv =
         rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
             if (uri == null) return@rememberLauncherForActivityResult
@@ -139,6 +145,13 @@ fun BackupAndRestore(
                     icon = painterResource(R.drawable.restore),
                     onClick = {
                         restoreLauncher.launch(arrayOf("application/octet-stream"))
+                    },
+                ),
+                Material3SettingsItem(
+                    title = { Text("Restore Player Queue") },
+                    icon = painterResource(R.drawable.restore),
+                    onClick = {
+                        restoreQueueLauncher.launch(arrayOf("application/octet-stream"))
                     },
                 ),
                 Material3SettingsItem(

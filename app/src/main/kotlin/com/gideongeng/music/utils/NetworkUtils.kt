@@ -9,8 +9,12 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.core.content.getSystemService
+import com.gideongeng.music.constants.OfflineModeKey
 
 fun isInternetAvailable(context: Context): Boolean {
+    // If the user explicitly enabled Offline Mode, report no internet
+    if (context.dataStore.get(OfflineModeKey, false)) return false
+
     val connectivityManager = context.getSystemService<ConnectivityManager>() ?: return false
     val activeNetwork = connectivityManager.activeNetwork ?: return false
     val networkCapabilities =

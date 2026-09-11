@@ -1069,6 +1069,20 @@ class ListenTogetherManager @Inject constructor(
     }
 
     /**
+     * Broadcast a local playlist to all guests in the room (host only).
+     * Guests will have their player queue replaced with the given track list.
+     */
+    fun broadcastPlaylist(title: String?, tracks: List<TrackInfo>) {
+        if (!isHost || !isInRoom) return
+        Log.d(TAG, "Broadcasting playlist '${title}' with ${tracks.size} tracks")
+        client.sendPlaybackAction(
+            PlaybackActions.SYNC_QUEUE,
+            queueTitle = title,
+            queue = tracks
+        )
+    }
+
+    /**
      * Disconnect from the server
      */
     fun disconnect() {

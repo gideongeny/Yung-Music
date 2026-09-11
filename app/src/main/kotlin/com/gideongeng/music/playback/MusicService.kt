@@ -157,11 +157,23 @@ import com.gideongeng.music.utils.CoilBitmapLoader
 import com.gideongeng.music.utils.DiscordRPC
 import com.gideongeng.music.utils.NetworkConnectivityObserver
 import com.gideongeng.music.utils.ScrobbleManager
+import com.gideongeng.music.utils.SmartSkipManager
+import com.gideongeng.music.utils.CommunityRatingManager
 import com.gideongeng.music.utils.SyncUtils
 import com.gideongeng.music.utils.YTPlayerUtils
 import com.gideongeng.music.utils.dataStore
 import com.gideongeng.music.utils.enumPreference
 import com.gideongeng.music.utils.get
+import com.gideongeng.music.constants.EnableSmartSkipKey
+import com.gideongeng.music.constants.SmartSkipSponsorKey
+import com.gideongeng.music.constants.SmartSkipIntroKey
+import com.gideongeng.music.constants.SmartSkipOutroKey
+import com.gideongeng.music.constants.SmartSkipSelfPromoKey
+import com.gideongeng.music.constants.SmartSkipInteractionKey
+import com.gideongeng.music.constants.EnableCommunityRatingKey
+import com.gideongeng.music.constants.EnableCrossfadeKey
+import com.gideongeng.music.constants.CrossfadeDurationKey
+import com.gideongeng.music.utils.SkipSegment
 import com.gideongeng.music.utils.reportException
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -294,6 +306,20 @@ class MusicService :
 
     private var scrobbleManager: ScrobbleManager? = null
 
+    // Smart Skip (community-powered segment filtering)
+    private var smartSkipEnabled = false
+    private var currentSmartSkipSegments: List<SkipSegment> = emptyList()
+    private var isSkippingSegment = false
+
+    // Crossfade
+    private lateinit var crossfadeController: CrossfadeController
+    
+    val isCrossfading: kotlinx.coroutines.flow.StateFlow<Boolean>
+        get() = if (this::crossfadeController.isInitialized) crossfadeController.isCrossfading else kotlinx.coroutines.flow.MutableStateFlow(false)
+
+    // Unified playback poller
+    private var playbackPollingJob: Job? = null
+
     val automixItems = MutableStateFlow<List<MediaItem>>(emptyList())
 
     // Tracks the original queue size to distinguish original items from auto-added ones
@@ -391,6 +417,9 @@ class MusicService :
                     addAnalyticsListener(PlaybackStatsListener(false, this@MusicService))
                     setOffloadEnabled(dataStore.get(AudioOffload, false))
                 }
+
+        // Initialize Crossfade Controller
+        crossfadeController = CrossfadeController(player, scope)
 
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         setupAudioFocusRequest()
@@ -524,6 +553,32 @@ class MusicService :
                 if (!enableInstant) {
                     silenceDetectorAudioProcessor.resetTracking()
                     silenceSkipJob?.cancel()
+                }
+            }
+
+        // Watch for Crossfade preference changes
+        dataStore.data
+            .map { it[EnableCrossfadeKey] ?: false }
+            .distinctUntilChanged()
+            .collect(scope) { enabled ->
+                crossfadeController.enabled = enabled
+            }
+
+        dataStore.data
+            .map { it[CrossfadeDurationKey] ?: 3 }
+            .distinctUntilChanged()
+            .collect(scope) { durationSeconds ->
+                crossfadeController.crossfadeDurationMs = durationSeconds * 1000L
+            }
+
+        // Watch for SmartSkip preference changes
+        dataStore.data
+            .map { it[EnableSmartSkipKey] ?: false }
+            .distinctUntilChanged()
+            .collect(scope) { enabled ->
+                smartSkipEnabled = enabled
+                if (!enabled) {
+                    currentSmartSkipSegments = emptyList()
                 }
             }
 
@@ -1492,6 +1547,24 @@ class MusicService :
         if (player.playWhenReady && player.playbackState == Player.STATE_READY) {
             scrobbleManager?.onSongStart(player.currentMetadata, duration = player.duration)
         }
+        
+        // Notify CrossfadeController about the transition
+        crossfadeController.onTrackTransition(playerVolume.value, isMuted.value)
+        
+        // Fetch SmartSkip segments for the new track
+        if (smartSkipEnabled && mediaItem != null) {
+            val videoId = mediaItem.mediaId
+            scope.launch {
+                currentSmartSkipSegments = emptyList()
+                val segments = SmartSkipManager.getSegments(
+                    videoId = videoId,
+                    enabled = smartSkipEnabled
+                )
+                if (player.currentMediaItem?.mediaId == videoId) {
+                    currentSmartSkipSegments = segments
+                }
+            }
+        }
 
         // Sync Cast when media changes and Cast is connected
         // Skip if this change was triggered by Cast sync (to prevent loops)
@@ -1558,10 +1631,17 @@ class MusicService :
 
         if (playbackState == Player.STATE_IDLE || playbackState == Player.STATE_ENDED) {
             scrobbleManager?.onSongStop()
+            playbackPollingJob?.cancel()
         }
     }
 
     override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
+        if (playWhenReady) {
+            startPlaybackPolling()
+        } else {
+            playbackPollingJob?.cancel()
+        }
+        
         // Safety net: if local player tries to start while casting, immediately pause it
         if (playWhenReady && castConnectionHandler?.isCasting?.value == true) {
             player.pause()
@@ -2126,6 +2206,40 @@ class MusicService :
     // Flag to prevent queue saving during silence skip operations
     private var isSilenceSkipping = false
 
+    private fun startPlaybackPolling() {
+        playbackPollingJob?.cancel()
+        playbackPollingJob = scope.launch {
+            while (isActive) {
+                if (player.playbackState == Player.STATE_READY && player.playWhenReady) {
+                    val positionMs = player.currentPosition
+                    val durationMs = player.duration
+                    
+                    // Crossfade tick
+                    crossfadeController.onPlaybackPositionUpdate(
+                        positionMs = positionMs,
+                        durationMs = durationMs,
+                        isMuted = isMuted.value,
+                        masterVolume = playerVolume.value
+                    )
+                    
+                    // SmartSkip tick
+                    if (smartSkipEnabled && currentSmartSkipSegments.isNotEmpty() && !isSkippingSegment) {
+                        val segmentToSkip = SmartSkipManager.getActiveSegment(positionMs, currentSmartSkipSegments)
+                        if (segmentToSkip != null && segmentToSkip.endMs < durationMs) {
+                            isSkippingSegment = true
+                            Log.d(TAG, "SmartSkip: Skipping segment ${segmentToSkip.category} from ${segmentToSkip.startMs} to ${segmentToSkip.endMs}")
+                            player.seekTo(segmentToSkip.endMs)
+                            // Allow a small window before checking again to prevent rapid skipping loops
+                            delay(500)
+                            isSkippingSegment = false
+                        }
+                    }
+                }
+                delay(200) // Poll every 200ms
+            }
+        }
+    }
+
     private fun handleLongSilenceDetected() {
         if (!instantSilenceSkipEnabled.value) return
         if (silenceSkipJob?.isActive == true) return
@@ -2372,6 +2486,15 @@ class MusicService :
                         oos.writeObject(persistQueue)
                     }
                 }
+                
+                // Auto-backup to external storage (Downloads)
+                @Suppress("DEPRECATION")
+                val downloadsDir = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)
+                if (downloadsDir != null && downloadsDir.exists()) {
+                    val backupFile = downloadsDir.resolve("YungMusic_persistent_queue_backup.data")
+                    filesDir.resolve(PERSISTENT_QUEUE_FILE).copyTo(backupFile, overwrite = true)
+                }
+                
                 Log.d(TAG, "Queue saved successfully")
             }.onFailure {
                 Log.e(TAG, "Failed to save queue", it)

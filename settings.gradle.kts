@@ -25,6 +25,7 @@ pluginManagement {
 
 rootProject.name = "YungMusic"
 include(":app")
+include(":desktop")
 include(":innertube")
 include(":kugou")
 include(":lrclib")

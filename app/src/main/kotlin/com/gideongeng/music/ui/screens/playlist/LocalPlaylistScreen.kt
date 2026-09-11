@@ -172,8 +172,11 @@ import com.gideongeng.music.utils.rememberPreference
 import com.gideongeng.music.utils.reportException
 import com.gideongeng.music.viewmodels.LocalPlaylistViewModel
 import io.ktor.client.plugins.ClientRequestException
-import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
+import sh.calvin.reorderable.ReorderableItem
+import com.gideongeng.music.listentogether.TrackInfo
+import com.gideongeng.music.listentogether.PlaybackActions
+import com.gideongeng.music.LocalListenTogetherManager
 import java.time.LocalDateTime
 
 @SuppressLint("RememberReturnType")
@@ -193,6 +196,9 @@ fun LocalPlaylistScreen(
     val mediaMetadata by playerConnection.mediaMetadata.collectAsState()
 
     val playlist by viewModel.playlist.collectAsState()
+    val listenTogetherManager = LocalListenTogetherManager.current
+    // Collaborative mode is a per-session in-memory toggle — no need to persist across restarts
+    var isCollaborative by remember { mutableStateOf(false) }
     val songs by viewModel.playlistSongs.collectAsState()
     val mutableSongs = remember { mutableStateListOf<PlaylistSong>() }
     val playlistLength =
@@ -470,6 +476,23 @@ fun LocalPlaylistScreen(
                 }
 
                 dragInfo = null
+
+                if (isCollaborative && listenTogetherManager?.isInRoom == true) {
+                    listenTogetherManager.broadcastPlaylist(
+                        title = playlist?.playlist?.name,
+                        tracks = mutableSongs.map { ps -> 
+                            val durationMs = if (ps.song.song.duration > 0) ps.song.song.duration.toLong() * 1000 else 180000L
+                            TrackInfo(
+                                id = ps.song.id,
+                                title = ps.song.song.title,
+                                artist = ps.song.artists.joinToString(", ") { it.name },
+                                album = ps.song.album?.title,
+                                duration = durationMs,
+                                thumbnail = ps.song.song.thumbnailUrl
+                            )
+                        }
+                    )
+                }
             }
         }
     }
@@ -546,6 +569,36 @@ fun LocalPlaylistScreen(
                                     )
                                 }
                             }
+                            if (editable && listenTogetherManager?.isInRoom == true) {
+                                IconButton(
+                                    onClick = {
+                                        isCollaborative = !isCollaborative
+                                        if (isCollaborative) {
+                                            listenTogetherManager.broadcastPlaylist(
+                                                title = playlist?.playlist?.name,
+                                                tracks = songs.map { ps -> 
+                                                    val durationMs = if (ps.song.song.duration > 0) ps.song.song.duration.toLong() * 1000 else 180000L
+                                                    TrackInfo(
+                                                        id = ps.song.id,
+                                                        title = ps.song.song.title,
+                                                        artist = ps.song.artists.joinToString(", ") { it.name },
+                                                        album = ps.song.album?.title,
+                                                        duration = durationMs,
+                                                        thumbnail = ps.song.song.thumbnailUrl
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    },
+                                    modifier = Modifier.padding(horizontal = 6.dp),
+                                ) {
+                                    Icon(
+                                        painter = painterResource(if (isCollaborative) R.drawable.queue_music else R.drawable.queue_music),
+                                        contentDescription = stringResource(R.string.collaborative_playlist),
+                                        tint = if (isCollaborative) MaterialTheme.colorScheme.primary else LocalContentColor.current
+                                    )
+                                }
+                            }
                         }
                     }
                 }
@@ -581,6 +634,24 @@ fun LocalPlaylistScreen(
                                 Int.MAX_VALUE
                             )
                             delete(currentItem.map.copy(position = Int.MAX_VALUE))
+                        }
+                        
+                        mutableSongs.removeIf { it.map.id == currentItem.map.id }
+                        if (isCollaborative && listenTogetherManager?.isInRoom == true) {
+                            listenTogetherManager.broadcastPlaylist(
+                                title = playlist?.playlist?.name,
+                                tracks = mutableSongs.map { ps -> 
+                                    val durationMs = if (ps.song.song.duration > 0) ps.song.song.duration.toLong() * 1000 else 180000L
+                                    TrackInfo(
+                                        id = ps.song.id,
+                                        title = ps.song.song.title,
+                                        artist = ps.song.artists.joinToString(", ") { it.name },
+                                        album = ps.song.album?.title,
+                                        duration = durationMs,
+                                        thumbnail = ps.song.song.thumbnailUrl
+                                    )
+                                }
+                            )
                         }
                     }
 

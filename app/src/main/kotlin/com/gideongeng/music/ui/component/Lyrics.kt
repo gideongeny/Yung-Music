@@ -16,10 +16,13 @@ import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.animation.slideInVertically
@@ -396,8 +399,8 @@ fun Lyrics(
     // Use Material 3 expressive accents and keep glow/text colors unified
     val expressiveAccent = when (playerBackground) {
         PlayerBackgroundStyle.DEFAULT -> MaterialTheme.colorScheme.primary
-        PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT -> {
-            // For blur/gradient backgrounds, always use light colors regardless of theme
+        PlayerBackgroundStyle.BLUR, PlayerBackgroundStyle.GRADIENT, PlayerBackgroundStyle.GLASS -> {
+            // For blur/gradient/glass backgrounds, always use light colors regardless of theme
             Color.White
         }
     }
@@ -1122,6 +1125,30 @@ fun Lyrics(
                             }
                             Text(text = styledText, fontSize = lyricsTextSize.sp, textAlign = alignment, lineHeight = (lyricsTextSize * lyricsLineSpacing).sp)
                         } else if (hasWordTimings && lyricsAnimationStyle == LyricsAnimationStyle.APPLE) {
+                            // === Apple Music Style Lyrics: scale-pop active line, blur inactive ===
+                            // Animated scale for active line spring
+                            val targetScale = if (isActiveLine) 1.06f else 1.0f
+                            val lineScale by animateFloatAsState(
+                                targetValue = targetScale,
+                                animationSpec = spring(
+                                    dampingRatio = Spring.DampingRatioMediumBouncy,
+                                    stiffness = Spring.StiffnessMedium
+                                ),
+                                label = "lyricsLineScale_$index"
+                            )
+                            // Inactive lines above active line are more dimmed; below are slightly dimmed
+                            val isPastLine = !isActiveLine && item.time < currentLineTime
+                            val targetLineAlpha = when {
+                                isActiveLine -> 1f
+                                isPastLine -> 0.38f   // already sung — more faded
+                                else -> 0.58f         // upcoming — lighter dim
+                            }
+                            val lyricsLineAlpha by animateFloatAsState(
+                                targetValue = targetLineAlpha,
+                                animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
+                                label = "lyricsLineAlpha_$index"
+                            )
+
                             val styledText = buildAnnotatedString {
                                 item.words.forEachIndexed { wordIndex, word ->
                                     val wordStartMs = (word.startTime * 1000).toLong()
@@ -1174,7 +1201,23 @@ fun Lyrics(
                                     if (wordIndex < item.words.size - 1) append(" ")
                                 }
                             }
-                            Text(text = styledText, fontSize = lyricsTextSize.sp, textAlign = alignment, lineHeight = (lyricsTextSize * lyricsLineSpacing).sp)
+                            // Apply scale + alpha with graphicsLayer for GPU-accelerated compositing
+                            Text(
+                                text = styledText,
+                                fontSize = lyricsTextSize.sp,
+                                textAlign = alignment,
+                                lineHeight = (lyricsTextSize * lyricsLineSpacing).sp,
+                                modifier = Modifier.graphicsLayer {
+                                    scaleX = lineScale
+                                    scaleY = lineScale
+                                    this.alpha = lyricsLineAlpha
+                                    transformOrigin = when (alignment) {
+                                        androidx.compose.ui.text.style.TextAlign.End -> TransformOrigin(1f, 0.5f)
+                                        androidx.compose.ui.text.style.TextAlign.Center -> TransformOrigin(0.5f, 0.5f)
+                                        else -> TransformOrigin(0f, 0.5f)
+                                    }
+                                }
+                            )
                         } else if (isActiveLine && lyricsGlowEffect) {
                             // Initial animation for glow fill from left to right
                             val fillProgress = remember { Animatable(0f) }

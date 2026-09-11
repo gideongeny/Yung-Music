@@ -18,6 +18,8 @@ val DynamicThemeKey = booleanPreferencesKey("dynamicTheme")
 val SelectedThemeColorKey = intPreferencesKey("selectedThemeColor")
 val DarkModeKey = stringPreferencesKey("darkMode")
 val PureBlackKey = booleanPreferencesKey("pureBlack")
+val OfflineModeKey = booleanPreferencesKey("offlineMode")
+val SmartCacheKey = booleanPreferencesKey("smartCache")
 val PureBlackMiniPlayerKey = booleanPreferencesKey("pureBlackMiniPlayer")
 val MiniPlayerOutlineKey = booleanPreferencesKey("miniPlayerOutline")
 val DefaultOpenTabKey = stringPreferencesKey("defaultOpenTab")
@@ -86,6 +88,22 @@ val SimilarContent = booleanPreferencesKey("similarContent")
 val AutoSkipNextOnErrorKey = booleanPreferencesKey("autoSkipNextOnError")
 val StopMusicOnTaskClearKey = booleanPreferencesKey("stopMusicOnTaskClear")
 val ShufflePlaylistFirstKey = booleanPreferencesKey("shufflePlaylistFirst")
+
+// Smart Skip (community-powered segment filtering)
+val EnableSmartSkipKey = booleanPreferencesKey("enableSmartSkip")
+val SmartSkipSponsorKey = booleanPreferencesKey("smartSkipSponsor")
+val SmartSkipIntroKey = booleanPreferencesKey("smartSkipIntro")
+val SmartSkipOutroKey = booleanPreferencesKey("smartSkipOutro")
+val SmartSkipSelfPromoKey = booleanPreferencesKey("smartSkipSelfPromo")
+val SmartSkipInteractionKey = booleanPreferencesKey("smartSkipInteraction")
+
+// Community Rating
+val EnableCommunityRatingKey = booleanPreferencesKey("enableCommunityRating")
+
+// Crossfade
+val EnableCrossfadeKey = booleanPreferencesKey("enableCrossfade")
+val EnableWaveformVisualizerKey = booleanPreferencesKey("enableWaveformVisualizer")
+val CrossfadeDurationKey = intPreferencesKey("crossfadeDuration") // duration in seconds
 
 val MaxImageCacheSizeKey = intPreferencesKey("maxImageCacheSize")
 val MaxSongCacheSizeKey = intPreferencesKey("maxSongCacheSize")
@@ -334,6 +352,7 @@ enum class PlayerBackgroundStyle {
     DEFAULT,
     GRADIENT,
     BLUR,
+    GLASS,
 }
 
 val TopSize = stringPreferencesKey("topSize")

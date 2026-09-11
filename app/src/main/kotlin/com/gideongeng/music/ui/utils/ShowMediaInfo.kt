@@ -255,25 +255,78 @@ fun ShowMediaInfo(videoId: String) {
                     )
                 }
             }
-            item(contentType = "MediaDescription") {
-                Column(
-                    horizontalAlignment = Alignment.Start,
-                    verticalArrangement = Arrangement.Top,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
-                    Text(
-                        text = stringResource(R.string.description),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.onBackground,
-                        textAlign = TextAlign.Start
-                    )
-                    BasicText(
-                        text = info?.description ?: "",
-                        style = MaterialTheme.typography.titleMedium.copy(color = MaterialTheme.colorScheme.onBackground),
+            item(contentType = "MediaCredits") {
+                val descriptionLines = info?.description?.lines() ?: emptyList()
+                val creditsMap = descriptionLines.mapNotNull { line ->
+                    if (line.contains(": ")) {
+                        val parts = line.split(": ", limit = 2)
+                        if (parts.size == 2 && parts[0].trim().length < 40) {
+                            parts[0].trim() to parts[1].trim()
+                        } else null
+                    } else null
+                }.toMap()
+
+                val cleanDescription = descriptionLines.filterNot { line ->
+                    line.contains(": ") && line.split(": ", limit = 2).let { it.size == 2 && it[0].trim().length < 40 }
+                }.joinToString("\n").trim()
+
+                if (creditsMap.isNotEmpty()) {
+                    Column(
+                        horizontalAlignment = Alignment.Start,
+                        verticalArrangement = Arrangement.Top,
                         modifier = Modifier
-                            .padding(all = 16.dp)
-                    )
+                            .fillMaxWidth()
+                            .padding(bottom = 16.dp)
+                    ) {
+                        Text(
+                            text = "Song Credits", // Can be localized later
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            textAlign = TextAlign.Start
+                        )
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            creditsMap.forEach { (role, name) ->
+                                Row(
+                                    modifier = Modifier.padding(bottom = 8.dp)
+                                ) {
+                                    BasicText(
+                                        text = "$role: ",
+                                        style = MaterialTheme.typography.titleSmall.copy(
+                                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f)
+                                        )
+                                    )
+                                    BasicText(
+                                        text = name,
+                                        style = MaterialTheme.typography.titleSmall.copy(
+                                            color = MaterialTheme.colorScheme.onBackground
+                                        )
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (cleanDescription.isNotBlank()) {
+                    Column(
+                        horizontalAlignment = Alignment.Start,
+                        verticalArrangement = Arrangement.Top,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.description),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            textAlign = TextAlign.Start
+                        )
+                        BasicText(
+                            text = cleanDescription,
+                            style = MaterialTheme.typography.titleMedium.copy(color = MaterialTheme.colorScheme.onBackground),
+                            modifier = Modifier
+                                .padding(all = 16.dp)
+                        )
+                    }
                 }
             }
             item(contentType = "MediaNumbers") {
