@@ -603,3 +603,5 @@ footer {
         align-items: center;
     }
 }
+.desktop-g-item:hover { transform: translateY(-10px) scale(1.02) !important; z-index: 5; box-shadow: 0 40px 80px rgba(var(--primary-rgb), 0.2); }
+
