@@ -2,7 +2,7 @@
   <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/icon.png?raw=true" width="160" height="160" style="display: block; margin: 0 auto; filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.25));" />
   
   <h1 style="border-bottom: none; font-size: 3em; margin-bottom: 0;">YungMusic</h1>
-  <p style="font-size: 1.2em; color: #888;">The Ultimate Ad-Free YouTube Music Experience for Android</p>
+  <p style="font-size: 1.2em; color: #888;">The Ultimate Ad-Free Music Experience for Android and Windows</p>
 
   <p align="center">
     <a href="https://github.com/gideongeny/Yung-Music/releases/latest">
@@ -18,14 +18,18 @@
 
   <div style="padding: 16px; margin: 24px 0; background-color: #2a2a2a; border-left: 6px solid #8A2BE2; border-radius: 8px; text-align: left;">
     <h3 style="margin: 0; color: #fff;">🌍 Regional Availability Notice</h3>
-    <p style="color: #ccc; margin-bottom: 0;">If you are in a region where YouTube Music is not officially supported, you will need a <strong>VPN or Proxy</strong> connected to a supported region to stream music.</p>
+    <p style="color: #ccc; margin-bottom: 0;">If you are in a region where global streaming is not officially supported, you will need a <strong>VPN or Proxy</strong> connected to a supported region to stream music.</p>
   </div>
 </div>
 
 <br/>
 
-## 📱 Beautiful. Fast. Yours.
-YungMusic is a beautifully crafted, privacy-respecting client for YouTube Music. Discover new artists, import your playlists, read synced lyrics, and enjoy high-quality audio streaming—all elegantly packaged in a stunning Material 3 interface.
+## 📱 & 💻 Beautiful. Fast. Yours.
+YungMusic is a beautifully crafted, privacy-respecting music client. Discover new artists, import your playlists, read synced lyrics, and enjoy high-quality audio streaming—all elegantly packaged in a stunning Material 3 interface on Android, and a sleek Desktop App for Windows.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/gideongeny/Yung-Music/main/website/images/desktop_1.png" width="800" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); margin-bottom: 20px;" alt="Desktop Player" />
+</div>
 
 <div align="center">
   <img src="https://github.com/gideongeny/Yung-Music/blob/main/fastlane/metadata/android/en-US/images/screenshots/screenshot_1.jpg?raw=true" width="23%" style="border-radius: 12px; margin: 0 1%; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
